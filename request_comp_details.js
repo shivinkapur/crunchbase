@@ -1,3 +1,4 @@
+var async = require('async');
 var http = require('http');
 var Db = require('mongodb').Db,
     MongoClient = require('mongodb').MongoClient,
@@ -23,14 +24,24 @@ function getData(url, callback) {
         res.on('end', function() {
             var json_data = JSON.parse(company_data);
             relation = json_data.data.relationships;
+
+            var arr = [];
             for(var i in relation) {
-                var url_i = relation[i].paging.first_page_url + "?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
-                console.log(i);
-                var flag = false;
-                getUrlData(url_i, i, flag, function() {
-                    // Received data
-                });
+                arr.push(i);
             }
+
+            async.each(arr, function(rel, cb) {
+                console.log(rel);
+                var url_i = relation[rel].paging.first_page_url + "?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
+                    
+                var flag = false;
+                getUrlData(url_i, rel, flag, function() {
+                    // Received data
+                    cb();
+                });
+            }, function(){
+                callback();
+            });
         });
     });
 }
@@ -63,6 +74,7 @@ function getUrlData(url, name, flag, callback) {
                 getUrlData(call_url, name, flag, callback);
             }
             else {
+                console.log(name + ": " + relation[name].items.length);
                 callback();
             }
         });
@@ -73,5 +85,6 @@ var relation;
 var url = "http://api.crunchbase.com/v/2/organization/facebook?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
 getData(url, function() {
     console.log("Done.");
-    console.log(relation);
+    for(var i in relation)
+        console.log(i + ": " + relation[i].items.length);
 });
