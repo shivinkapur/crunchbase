@@ -22,18 +22,20 @@ function getData(url, callback) {
 
         res.on('end', function() {
             var json_data = JSON.parse(company_data);
-            var rel = json_data.data.relationships;
-            for(var i in rel) {
-                var url_i = rel[i].paging.first_page_url + "?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
-                getUrlData(url_i, function(data) {
-                    console.log(data);
+            relation = json_data.data.relationships;
+            for(var i in relation) {
+                var url_i = relation[i].paging.first_page_url + "?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
+                console.log(i);
+                var flag = false;
+                getUrlData(url_i, i, flag, function() {
+                    // Received data
                 });
             }
         });
     });
 }
 
-function getUrlData(url, callback) {
+function getUrlData(url, name, flag, callback) {
     var req = http.get(url, function(res) {
         res.setEncoding('utf8');
         var rel_data = '';
@@ -43,12 +45,33 @@ function getUrlData(url, callback) {
 
         res.on('end', function() {
             var json_rel_data = JSON.parse(rel_data);
-            callback(json_rel_data); 
+
+            var curr_items = json_rel_data.data.items;
+            if(!flag) {
+                relation[name].items = curr_items;
+            }else {
+                for(var i in curr_items) {
+                    relation[name].items.push(curr_items[i]);
+                }
+            }
+
+            //console.log("REL DATA!!!! :: " + rel_data);
+            var new_url = json_rel_data.data.paging.next_page_url;
+            if(new_url) {
+                var call_url = new_url+"&user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
+                flag = true;
+                getUrlData(call_url, name, flag, callback);
+            }
+            else {
+                callback();
+            }
         });
     });
 }
 
+var relation;
 var url = "http://api.crunchbase.com/v/2/organization/facebook?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
 getData(url, function() {
     console.log("Done.");
+    console.log(relation);
 });
