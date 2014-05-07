@@ -12,6 +12,8 @@ var Db = require('mongodb').Db,
     BSON = require('mongodb').pure().BSON,
     assert = require('assert');
 
+var json_data;
+
 function getData(url, callback) {
     var req = http.get(url, function(res) {
         res.setEncoding('utf8');
@@ -22,8 +24,8 @@ function getData(url, callback) {
         });
 
         res.on('end', function() {
-            var json_data = JSON.parse(company_data);
-            relation = json_data.data.relationships;
+            json_data = JSON.parse(company_data);
+            var relation = json_data.data.relationships;
 
             var arr = [];
             for(var i in relation) {
@@ -31,7 +33,6 @@ function getData(url, callback) {
             }
 
             async.each(arr, function(rel, cb) {
-                console.log(rel);
                 var url_i = relation[rel].paging.first_page_url + "?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
                     
                 var flag = false;
@@ -59,10 +60,10 @@ function getUrlData(url, name, flag, callback) {
 
             var curr_items = json_rel_data.data.items;
             if(!flag) {
-                relation[name].items = curr_items;
-            }else {
+                json_data.data.relationships[name].items = curr_items;
+            } else {
                 for(var i in curr_items) {
-                    relation[name].items.push(curr_items[i]);
+                    json_data.data.relationships[name].items.push(curr_items[i]);
                 }
             }
 
@@ -74,17 +75,20 @@ function getUrlData(url, name, flag, callback) {
                 getUrlData(call_url, name, flag, callback);
             }
             else {
-                console.log(name + ": " + relation[name].items.length);
+                console.log(name + ": " + json_data.data.relationships[name].items.length);
                 callback();
             }
         });
     });
 }
 
-var relation;
-var url = "http://api.crunchbase.com/v/2/organization/facebook?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
-getData(url, function() {
-    console.log("Done.");
-    for(var i in relation)
-        console.log(i + ": " + relation[i].items.length);
-});
+module.exports = {
+    getCompanyDetails: function (companyName, callback) {
+        var url = "http://api.crunchbase.com/v/2/"+companyName+"?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
+        console.log(url);
+        getData(url, function() {
+            console.log("Done.");
+            callback(json_data);
+        });
+    }
+};
