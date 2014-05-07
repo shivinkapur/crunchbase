@@ -36,7 +36,7 @@ function getData(url, callback) {
 
 	  		var new_url = jsonCompanies.data.paging.next_page_url;
 	  		if(new_url) {
-	  			var call_url = new_url+"&user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
+	  			var call_url = new_url+"&user_key=4f6fb15f3eb9187e1668d3d6604758d4";
 	  			console.log(call_url);
 	  			getData(call_url, callback);
 	  		}
@@ -51,7 +51,7 @@ function getData(url, callback) {
 	}).end();
 }
 
-var path = 'http://api.crunchbase.com/v/2/organizations?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4'
+var path = 'http://api.crunchbase.com/v/2/organizations?user_key=4f6fb15f3eb9187e1668d3d6604758d4'
 getData(path, function() {
 	console.log("Done");
 });

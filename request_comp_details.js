@@ -33,7 +33,7 @@ function getData(url, callback) {
             }
 
             async.each(arr, function(rel, cb) {
-                var url_i = relation[rel].paging.first_page_url + "?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
+                var url_i = relation[rel].paging.first_page_url + "?user_key=4f6fb15f3eb9187e1668d3d6604758d4";
                     
                 var flag = false;
                 getUrlData(url_i, rel, flag, function() {
@@ -70,7 +70,7 @@ function getUrlData(url, name, flag, callback) {
             //console.log("REL DATA!!!! :: " + rel_data);
             var new_url = json_rel_data.data.paging.next_page_url;
             if(new_url) {
-                var call_url = new_url+"&user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
+                var call_url = new_url+"&user_key=4f6fb15f3eb9187e1668d3d6604758d4";
                 flag = true;
                 getUrlData(call_url, name, flag, callback);
             }
@@ -84,7 +84,7 @@ function getUrlData(url, name, flag, callback) {
 
 module.exports = {
     getCompanyDetails: function (companyName, callback) {
-        var url = "http://api.crunchbase.com/v/2/"+companyName+"?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
+        var url = "http://api.crunchbase.com/v/2/"+companyName+"?user_key=4f6fb15f3eb9187e1668d3d6604758d4";
         console.log(url);
         getData(url, function() {
             console.log("Done.");

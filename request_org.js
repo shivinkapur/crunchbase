@@ -12,7 +12,7 @@ var Db = require('mongodb').Db,
     assert = require('assert');
 
 function getOrgData(path, callback) {
-	var url = "http://api.crunchbase.com/v/2/"+path+"?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
+	var url = "http://api.crunchbase.com/v/2/"+path+"?user_key=4f6fb15f3eb9187e1668d3d6604758d4";
 
 	getData(url, function(company) {
 		console.log("get org data function : " + company);
