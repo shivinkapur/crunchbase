@@ -17,6 +17,7 @@ var json_data;
 function getData(url, callback) {
     var req = http.get(url, function(res) {
         res.setEncoding('utf8');
+
         var company_data = '';
 
         res.on('data', function(chunk) {
@@ -25,6 +26,12 @@ function getData(url, callback) {
 
         res.on('end', function() {
             json_data = JSON.parse(company_data);
+            if(!json_data.data.relationships) {
+                console.log("no relationships -- RETURN")
+                jsonData = '';
+                callback();
+            }
+
             var relation = json_data.data.relationships;
 
             var arr = [];
@@ -33,8 +40,10 @@ function getData(url, callback) {
             }
 
             async.each(arr, function(rel, cb) {
-                var url_i = relation[rel].paging.first_page_url + "?user_key=4f6fb15f3eb9187e1668d3d6604758d4";
-                    
+                var url_i = relation[rel].paging.first_page_url + "?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
+
+                console.log(url_i);
+                
                 var flag = false;
                 getUrlData(url_i, rel, flag, function() {
                     // Received data
@@ -50,12 +59,14 @@ function getData(url, callback) {
 function getUrlData(url, name, flag, callback) {
     var req = http.get(url, function(res) {
         res.setEncoding('utf8');
+        
         var rel_data = '';
         res.on('data', function(chunk) {
             rel_data += chunk;
         });
 
         res.on('end', function() {
+            
             var json_rel_data = JSON.parse(rel_data);
 
             var curr_items = json_rel_data.data.items;
@@ -70,12 +81,11 @@ function getUrlData(url, name, flag, callback) {
             //console.log("REL DATA!!!! :: " + rel_data);
             var new_url = json_rel_data.data.paging.next_page_url;
             if(new_url) {
-                var call_url = new_url+"&user_key=4f6fb15f3eb9187e1668d3d6604758d4";
+                var call_url = new_url+"&user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
                 flag = true;
                 getUrlData(call_url, name, flag, callback);
             }
             else {
-                console.log(name + ": " + json_data.data.relationships[name].items.length);
                 callback();
             }
         });
@@ -84,8 +94,7 @@ function getUrlData(url, name, flag, callback) {
 
 module.exports = {
     getCompanyDetails: function (companyName, callback) {
-        var url = "http://api.crunchbase.com/v/2/"+companyName+"?user_key=4f6fb15f3eb9187e1668d3d6604758d4";
-        console.log(url);
+        var url = "http://api.crunchbase.com/v/2/"+companyName+"?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
         getData(url, function() {
             console.log("Done.");
             callback(json_data);

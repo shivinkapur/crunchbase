@@ -12,27 +12,28 @@ db.open(function(err, db) {
 
 	var collection = db.collection('Companies');
 
-	console.log(typeof companyLib.getCompanyDetails);
-
 	collection.find().toArray(function(err, result) {
 		var arr = [];
 		for(var i in result) {
 			arr.push(result[i]);
-			console.log(result[i].path)
+			console.log(result[i]._id);
 		}
 
 		async.each(arr, 
 			function(comp, cb) {
 				var companyName = comp.path;
-				console.log(comp._id);
-				companyLib.getCompanyDetails(companyName, function(companyDetails) {
-					collection.update( {_id: comp._id }, {$set : {details : companyDetails} } , {upsert: true}, function(err, rec) {
-						if(err) throw err
-						// Data added
-						console.log(comp._id);
-						cb();
+				if(!comp.visited) {
+					companyLib.getCompanyDetails(companyName, function(companyDetails) {
+						collection.update( {_id: comp._id }, {$set : {details : companyDetails, visited : true} } , {upsert: true}, function(err, rec) {
+							if(err) throw err
+							console.log(comp._id);
+							cb();
+						});
 					});
-				});
+				} else {
+					console.log(comp.name + " visited");
+					cb();
+				}
 			}, function(){
 				db.close();
 		});
