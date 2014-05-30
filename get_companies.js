@@ -5,6 +5,9 @@ var Db = require('mongodb').Db,
     assert = require('assert');
 var companyLib = require('./request_comp_details.js');
 var async = require('async')
+var request = require('request');
+var heapdump = require('heapdump');
+require('ofe').call();
 
 var db = new Db('test', new Server('localhost', 27017));
 db.open(function(err, db) {

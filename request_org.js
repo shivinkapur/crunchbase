@@ -10,6 +10,7 @@ var Db = require('mongodb').Db,
     Code = require('mongodb').Code,
     BSON = require('mongodb').pure().BSON,
     assert = require('assert');
+var request = require('request');
 
 function getOrgData(path, callback) {
 	var url = "http://api.crunchbase.com/v/2/"+path+"?user_key=f4c6f14f47ee61ff4bbb4686a4742dc4";
