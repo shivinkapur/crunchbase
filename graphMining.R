@@ -183,7 +183,7 @@ p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray
 p
 
 
-#overlap graph for investors
+#overlap graph for investors for 5 randomly sampled company names
 olInvestors= Arow/diag(Arow)
 olInvestors=as.matrix(olInvestors)
 olInvestorsg= graph.adjacency(olInvestors, weighted=T)
@@ -211,11 +211,11 @@ V(olInvestor1g)$label <- V(olInvestor1g)$name
 tkplot(olInvestor1g)
 
 #save layout
-olInvestor1g$layout <- tkplot.getcoords(4)
+olInvestor1g$layout <- tkplot.getcoords(6)
 
 # Set vertex attributes
 V(olInvestor1g)$label <- V(olInvestor1g)$name
-V(olInvestor1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)
+V(olInvestor1g)$label.color <- rgb(250/256,128/256,114/256, 0.8)
 V(olInvestor1g)$size <- 6
 V(olInvestor1g)$frame.color <- NA
 V(olInvestor1g)$color <- rgb(95/256,158/256,160/256,.5)
@@ -225,14 +225,14 @@ E(olInvestor1g)$arrow.size <- .3
  
 # Set edge gamma according to edge weight
 egam <- (E(olInvestor1g)$weight+.1)/max(E(olInvestor1g)$weight+.1)
-E(olInvestor1g)$color <- rgb(0.5,0.5,0,0.1)
+E(olInvestor1g)$color <- rgb(0.5,0.5,0,egam)
 
-V(olInvestor1g)$label.cex <- V(olInvestor1g)$degree/(max(V(olInvestor1g)$degree)/2)
+V(olInvestor1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))) + 0.5
 #note, unfortunately one must play with the formula above to get the
 #ratio just right
 
 pdf("olInvestor1gcustomlayout.pdf")
-plot(olInvestor1g)
+plot(olInvestor1g, main="Overlap Network of Investors")
 dev.off()
 
 ####
@@ -402,4 +402,91 @@ plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)
 dev.off()
 ##
 
+###
+#Acquirer Region and Company Region
+acq_comRegion= data.frame(acquisitions$acquirer_region, acquisitions$company_region, acquisitions$company_name)
+colnames(acq_comRegion)=c("acqRegion", "comRegion", "company")
+acq_comRegion= acq_comRegion[acq_comRegion[,1] != "unknown",]
+acq_comRegion= acq_comRegion[acq_comRegion[,2] != "unknown",]
+
+acq_comRegion_top1000= subset(acq_comRegion, company %in% company_names_top1000$name)
+
+acq_comRegion$company=NULL
+acq_comRegion_top1000$company=NULL
+
+dim(acq_comRegion)
+length(unique(acq_comRegion$acqRegion))
+length(unique(acq_comRegion$comRegion))
+
+dim(acq_comRegion_top1000)
+length(unique(acq_comRegion_top1000$acqRegion))
+length(unique(acq_comRegion_top1000$comRegion))
+
+
+#spare matrix 
+A= spMatrix(nrow=length(unique(acq_comRegion_top1000$acqRegion)),
+	ncol=length(unique(acq_comRegion_top1000$comRegion)),
+	i=as.numeric(factor(acq_comRegion_top1000$acqRegion)),
+	j=as.numeric(factor(acq_comRegion_top1000$comRegion)),
+	x=rep(1, length(as.numeric(acq_comRegion_top1000$acqRegion)))  )
+
+row.names(A)= levels(factor(acq_comRegion_top1000$acqRegion))
+colnames(A)= levels(factor(acq_comRegion_top1000$comRegion))
+#row.names(A)= paste(row.names(A), "_acq", sep="")
+
+Arow= tcrossprod(A) #adjacency matrix for acquirer regions
+
+Acol=tcrossprod(t(A)) #adjacency matrix for company regions 
+
+#overlap graph for acquire regions
+olAcqRegions= Arow/diag(Arow)
+olAcqRegions=as.matrix(olAcqRegions)
+olAcqRegionsg= graph.adjacency(olAcqRegions, weighted=T)
+
+#Degree
+V(olAcqRegionsg)$degree= degree(olAcqRegionsg)
+
+#Betweenness centrality
+V(olAcqRegionsg)$btwcnt= betweenness(olAcqRegionsg)
+
+#distribution of connection strength
+plot(density(olAcqRegions), main="Distribution of Connection Strength")
+
+#filter at 1 so that an edge will consists of investor overlap of more than 1 of the investor’s companies in question
+olAcqRegions1 = olAcqRegions
+#olInvestors1[olInvestors<0.5] = 0
+olAcqRegions1g = graph.adjacency(olAcqRegions1, weighted=T)
+
+#remove loops
+olAcqRegions1g<- simplify(olAcqRegions1g, remove.multiple=FALSE, remove.loops=TRUE)
+
+#hand placing nodes to make sure no labels overlap
+olAcqRegions1g$layout <- layout.fruchterman.reingold(olAcqRegions1g)
+V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name
+tkplot(olAcqRegions1g)
+
+#save layout
+olAcqRegions1g$layout <- tkplot.getcoords(7)
+
+# Set vertex attributes
+V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name
+V(olAcqRegions1g)$label.color <- rgb(250/256,128/256,114/256, 0.8)
+V(olAcqRegions1g)$size <- 6
+V(olAcqRegions1g)$frame.color <- NA
+V(olAcqRegions1g)$color <- rgb(95/256,158/256,160/256,.5)
+ 
+# Set edge attributes
+E(olAcqRegions1g)$arrow.size <- .3
+ 
+# Set edge gamma according to edge weight
+egam <- (E(olAcqRegions1g)$weight+.1)/max(E(olAcqRegions1g)$weight+.1)
+E(olAcqRegions1g)$color <- rgb(0.5,0.5,0,egam)
+
+V(olAcqRegions1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))) + 0.5
+#note, unfortunately one must play with the formula above to get the
+#ratio just right
+
+pdf("olAcqRegions1gcustomlayout.pdf")
+plot(olAcqRegions1g, main="Overlap Network for Acquirer Regions")
+dev.off()
 
