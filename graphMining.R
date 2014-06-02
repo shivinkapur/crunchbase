@@ -127,6 +127,14 @@ plot(Ainvestors, main = "layout.kamada.kawai", layout=layout.kamada.kawai)
 plot(Ainvestors, main = "layout.fruchterman.reingold", layout=layout.fruchterman.reingold)
 dev.off()
 
+#jaccard similarity
+jaccard.similarities= similarity.jaccard(Ainvestors)
+pdf("Jaccard_Similarity_Investors.pdf")
+heatmap(jaccard.similarities, symm=TRUE, main="J S of Investors (Top 20 Companies)",
+	cexRow=0.5, cexCol=0.5)
+dev.off()
+
+
 #adjacency matrix of companies
 Acompanies= graph.adjacency(Acol, mode= "undirected") 
 
@@ -151,6 +159,28 @@ pdf("Acompanies_top110companies.pdf")
 plot(Acompanies, main = "layout.kamada.kawai", layout=layout.kamada.kawai)
 plot(Acompanies, main = "layout.fruchterman.reingold", layout=layout.fruchterman.reingold)
 dev.off()
+
+
+#jaccard similarity
+jaccard.similarities= similarity.jaccard(Acompanies)
+pdf("Jaccard_Similarity_Companies.pdf")
+heatmap(jaccard.similarities, symm=TRUE, main="J S of Top 20 Funded Companies",
+	cexRow=0.5, cexCol=0.5, col=blueyellow(64))
+dev.off()
+
+#heatmap for correlation between top 20 companies
+library(ggplot2)
+library(reshape2)
+A=as.matrix(A)
+m = melt(cor(A))
+colnames(m)=c("Company1", "Company2", "value")
+p <- ggplot(data=m, aes(x=Company1, y=Company2, fill=value)) + geom_tile()+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)
+RtoWrange<-colorRampPalette(c(red, white ) )
+WtoGrange<-colorRampPalette(c(white, green) )  
+p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
+p
 
 
 #overlap graph for investors
@@ -204,4 +234,172 @@ V(olInvestor1g)$label.cex <- V(olInvestor1g)$degree/(max(V(olInvestor1g)$degree)
 pdf("olInvestor1gcustomlayout.pdf")
 plot(olInvestor1g)
 dev.off()
+
+####
+#ACQUISITIONS AND COMPANIES
+
+acquisitions=read.csv("/Users/Work/Documents/CS249/project/crunchbase/Data/acquisitions.csv", header=TRUE)
+acquisitions=na.omit(acquisitions)
+acquirer_company= data.frame(acquisitions$acquirer_name, acquisitions$company_name)
+colnames(acquirer_company)=c("acquirer", "company")
+
+acquirer_companytop1000= subset(acquirer_company, company %in% company_names_top1000$name)
+dim(acquirer_companytop1000)
+
+
+#two mode incidence matrix to one mode adjacency matrix conversion
+
+#incidence matrix
+A= spMatrix(nrow=length(unique(acquirer_companytop1000$acquirer)),
+	ncol=length(unique(acquirer_companytop1000$company)),
+	i=as.numeric(factor(acquirer_companytop1000$acquirer)),
+	j=as.numeric(factor(acquirer_companytop1000$company)),
+	x=rep(1, length(as.numeric(acquirer_companytop1000$acquirer)))  )
+
+row.names(A)= levels(factor(acquirer_companytop1000$acquirer))
+colnames(A)= levels(factor(acquirer_companytop1000$company))
+
+iAC= graph.incidence(A, mode=c("all"))
+
+#plot two-made graph
+#check and change these index values everytime 
+V(iAC)$color[1:82] <- rgb(1,0,0,.5) # acquirers for top1000 
+V(iAC)$color[83:167] <- rgb(0,1,0,.5) #companies for top1000
+
+V(iAC)$label <- V(iAC)$name
+V(iAC)$label.color <- rgb(0,0,.2,.5)
+V(iAC)$label.cex <- .4
+V(iAC)$size <- 6
+V(iAC)$frame.color <- NA
+
+E(iAC)$color <- rgb(.5,.5,0,.2)
+
+pdf("iAC_top1000companies.pdf")
+plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)
+dev.off()
+
+#Working with adjacency matrix
+print(head(A))
+Arow= tcrossprod(A) #adjacency matrix for acquirers
+print(head(Arow))
+
+Acol=tcrossprod(t(A)) #adjacency matrix for companies
+print(head(Acol))
+
+#adjacency matrix of investors
+Aacquirer= graph.adjacency(Arow, mode= "undirected") 
+
+#we need to transform the graph so that multiply edges become an attribute
+E(Aacquirer)$weight = count.multiple(Aacquirer)
+Aacquirer = simplify(Aacquirer)
+
+#setting plotting parameters
+# Set vertex attributes
+V(Aacquirer)$label = V(Aacquirer)$name
+V(Aacquirer)$label.color = rgb(0,0,.2,.8)
+V(Aacquirer)$label.cex = .6
+V(Aacquirer)$size = 6
+V(Aacquirer)$frame.color = NA
+V(Aacquirer)$color = rgb(0,0,1,.5)
+ 
+# Set edge gamma according to edge weight
+egam <- (log(E(Aacquirer)$weight)+.3)/max(log(E(Aacquirer)$weight)+.3)
+E(Aacquirer)$color <- rgb(.5,.5,0,egam)
+
+pdf("Aacquirer_top1000companies.pdf")
+plot(Aacquirer, main = "Adjacency Graph of Acquirers", layout=layout.kamada.kawai)
+plot(Aacquirer, main = "Adjacency Graph of Acquirers", layout=layout.fruchterman.reingold)
+dev.off()
+
+#jaccard similarity
+jaccard.similarities= similarity.jaccard(Aacquirer)
+heatmap(jaccard.similarities, symm=TRUE, main="Jaccard Similarity",
+	cexRow=0.5, cexCol=0.5)
+
+#adjacency matrix of companies
+Acompanies= graph.adjacency(Acol, mode= "undirected") 
+
+#we need to transform the graph so that multiply edges become an attribute
+E(Acompanies)$weight = count.multiple(Acompanies)
+Acompanies = simplify(Acompanies)
+
+#setting plotting parameters
+# Set vertex attributes
+V(Acompanies)$label = V(Acompanies)$name
+V(Acompanies)$label.color = rgb(0,0,.2,.8)
+V(Acompanies)$label.cex = .6
+V(Acompanies)$size = 6
+V(Acompanies)$frame.color = NA
+V(Acompanies)$color = rgb(0,0,1,.5)
+ 
+# Set edge gamma according to edge weight
+egam <- (log(E(Acompanies)$weight)+.3)/max(log(E(Acompanies)$weight)+.3)
+E(Acompanies)$color <- rgb(.5,.5,0,egam)
+
+pdf("Aacqcompanies_top1000companies.pdf")
+plot(Acompanies, main = "Adjacency Graph of Acquired Companies", layout=layout.kamada.kawai)
+plot(Acompanies, main = "Adjacency Graph of Acquired Companies", layout=layout.fruchterman.reingold)
+dev.off()
+
+
+#incidence graph for entire dataset 
+##USELESS PLOTS
+A= spMatrix(nrow=length(unique(acquirer_company$acquirer)),
+	ncol=length(unique(acquirer_company$company)),
+	i=as.numeric(factor(acquirer_company$acquirer)),
+	j=as.numeric(factor(acquirer_company$company)),
+	x=rep(1, length(as.numeric(acquirer_company$acquirer)))  )
+
+row.names(A)= levels(factor(acquirer_company$acquirer))
+colnames(A)= levels(factor(acquirer_company$company))
+row.names(A) = paste(row.names(A), "_acq", sep="")
+
+Arow= tcrossprod(A) #adjacency matrix for acquirers
+
+Acol=tcrossprod(t(A)) #adjacency matrix for companies
+
+
+iAC= graph.incidence(A, mode=c("all"))
+
+#plot two-made graph
+#check and change these index values everytime 
+V(iAC)$color[1:5369] <- rgb(1,0,0,.5) # acquirers 
+V(iAC)$color[5370:15657] <- rgb(0,1,0,.5) #companies 
+
+V(iAC)$label <- V(iAC)$name
+V(iAC)$label.color <- rgb(0,0,.2,.5)
+V(iAC)$label.cex <- .4
+V(iAC)$size <- 6
+V(iAC)$frame.color <- NA
+
+E(iAC)$color <- rgb(.5,.5,0,.2)
+
+pdf("iAC.pdf")
+plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)
+dev.off()
+
+#clean the network by removing 1 degree edges
+iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)<=1 ]) 
+V(iAC)$label[1:1441] <- NA
+V(iAC)$color[1:1441] <-  rgb(1,0,0,.1)
+V(iAC)$size[1:1441] <- 2
+ 
+E(iAC)$width <- .3
+E(iAC)$color <- rgb(.5,.5,0,.1)
+ 
+pdf("iAC.2.pdf")
+plot(iAC, main= "Two-mode incidence graph", layout=layout.kamada.kawai)
+dev.off()
+ 
+pdf("iAC.3.pdf")
+plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold.grid)
+dev.off()
+ 
+#gives best plot : it really emphasizes centrality–the nodes that are most central 
+#are nearly always placed in the middle of the plot
+pdf("iAC.4.pdf")
+plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)
+dev.off()
+##
+
 
