@@ -286,7 +286,7 @@ print(head(Arow))
 Acol=tcrossprod(t(A)) #adjacency matrix for companies
 print(head(Acol))
 
-#adjacency matrix of investors
+#adjacency matrix of acquirers
 Aacquirer= graph.adjacency(Arow, mode= "undirected") 
 
 #we need to transform the graph so that multiply edges become an attribute
@@ -438,6 +438,26 @@ Arow= tcrossprod(A) #adjacency matrix for acquirer regions
 
 Acol=tcrossprod(t(A)) #adjacency matrix for company regions 
 
+iAC= graph.incidence(A, mode=c("all"))
+
+#plot two-made graph
+#check and change these index values everytime 
+V(iAC)$color[1:40] <- rgb(1,0,0,.5) # acquirer region
+V(iAC)$color[41:75] <- rgb(0,1,0,.5) #company region
+
+V(iAC)$label <- V(iAC)$name
+V(iAC)$label.color <- rgb(0,0,.2,.5)
+V(iAC)$label.cex <- .4
+V(iAC)$size <- 6
+V(iAC)$frame.color <- NA
+
+E(iAC)$color <- rgb(.5,.5,0,.2)
+
+pdf("iACRegions.pdf")
+plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)
+dev.off()
+
+
 #overlap graph for acquire regions
 olAcqRegions= Arow/diag(Arow)
 olAcqRegions=as.matrix(olAcqRegions)
@@ -490,3 +510,50 @@ pdf("olAcqRegions1gcustomlayout.pdf")
 plot(olAcqRegions1g, main="Overlap Network for Acquirer Regions")
 dev.off()
 
+#adjacency matrix of acquirer regions
+Aacquirer= graph.adjacency(Arow, mode= "undirected") 
+
+#we need to transform the graph so that multiply edges become an attribute
+E(Aacquirer)$weight = count.multiple(Aacquirer)
+Aacquirer = simplify(Aacquirer)
+
+#setting plotting parameters
+# Set vertex attributes
+V(Aacquirer)$label = V(Aacquirer)$name
+V(Aacquirer)$label.color = rgb(0,0,.2,.8)
+V(Aacquirer)$label.cex = .6
+V(Aacquirer)$size = 6
+V(Aacquirer)$frame.color = NA
+V(Aacquirer)$color = rgb(0,0,1,.5)
+ 
+# Set edge gamma according to edge weight
+egam <- (log(E(Aacquirer)$weight)+.3)/max(log(E(Aacquirer)$weight)+.3)
+E(Aacquirer)$color <- rgb(.5,.5,0,egam)
+
+pdf("AacquirerRegions_top1000companies.pdf")
+plot(Aacquirer, main = "Adjacency Graph of Acquirer Regions", layout=layout.kamada.kawai)
+dev.off()
+
+#adjacency matrix of company regions
+Acompanies= graph.adjacency(Acol, mode= "undirected") 
+
+#we need to transform the graph so that multiply edges become an attribute
+E(Acompanies)$weight = count.multiple(Acompanies)
+Acompanies = simplify(Acompanies)
+
+#setting plotting parameters
+# Set vertex attributes
+V(Acompanies)$label = V(Acompanies)$name
+V(Acompanies)$label.color = rgb(0,0,.2,.8)
+V(Acompanies)$label.cex = .6
+V(Acompanies)$size = 6
+V(Acompanies)$frame.color = NA
+V(Acompanies)$color = rgb(0,0,1,.5)
+ 
+# Set edge gamma according to edge weight
+egam <- (log(E(Acompanies)$weight)+.3)/max(log(E(Acompanies)$weight)+.3)
+E(Acompanies)$color <- rgb(.5,.5,0,egam)
+
+pdf("AacqcompanyRegions_top1000companies.pdf")
+plot(Acompanies, main = "Adjacency Graph of Acquired Company Regions", layout=layout.kamada.kawai)
+dev.off()
