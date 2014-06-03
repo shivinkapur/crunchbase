@@ -43,3 +43,32 @@ addLabel <- function(val) {
  }
  all_companies_new$labelNum = labelNum
  head(all_companies_new)
+
+features = all_companies_new[c(4,6,7,11,13,16,17,21,25,27,28)]
+colnames(features)
+# Feature names
+# [1] "category_code"          "status"                 "country_code"           "funding_rounds"         "founded_year"          
+# [6] "investor_category_code" "investor_country_code"  "funding_round_type.y"   "funded_year.y"          "quarters"
+#[11] "labelNum"  
+features$funded_year.y = as.character(features$funded_year.y)
+
+# Converts qualitative to quantitative
+new_features = model.matrix(~., data=features)
+
+install.packages("caret")
+library(caret)
+
+new_features_2 = as.data.frame(new_features)
+descr = new_features_2[c(1:309)]
+
+amount = as.character(new_features_2$labelNum)
+amount = as.factor(amount)
+set.seed(1)
+inTrain <- createDataPartition(amount, p = 3/4, list = FALSE)
+
+trainDescr <- descr[inTrain,]
+testDescr  <- descr[-inTrain,]
+trainClass <- amount[inTrain]
+testClass  <- amount[-inTrain]
+prop.table(table(amount))
+prop.table(table(trainClass))
