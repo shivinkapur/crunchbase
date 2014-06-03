@@ -63,3 +63,5 @@ group_all$labelNum = labelNum
 new_groups = group_all
 new_groups$funded_year = as.character(new_groups$funded_year)
 groups = model.matrix(~company_category_code+company_country_code+funding_round_type+funded_year+labelNum, data = new_groups)
+
+
