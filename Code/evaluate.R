@@ -28,25 +28,38 @@ group_all = ddply(new_rounds, .(company_category_code, company_country_code, fun
 # Add label based on funding
 addLabel <- function(val) {
 	label = ""
+	labelNum = 0
 	if(val < 150000) {
 		label = "very low"
+		labelNum = 1
 	} else if(val >= 150000 && val < 839718) {
 		label = "low"
+		labelNum = 2
 	} else if(val >= 839718 && val < 2363486) {
 		label = "lower moderate"
+		labelNum = 3
 	} else if(val >= 2363486 && val < 6000000) {
 		label = "moderate"
+		labelNum = 4
 	} else if(val >= 6000000 && val < 14500000) {
 		label = "higher moderate"
+		labelNum = 5
 	} else if(val >= 14500000 && val < 43818650) {
 		label = "high"
+		labelNum = 6
 	} else {
 		label = "very high"
+		labelNum = 7
 	}
-	return(label)
+	return(labelNum)
 }
 
+labelNum = c()
 for(i in group_all$total_amount) {
-	label = c(label, addLabel(i))
+	labelNum = c(labelNum, addLabel(i))
 }
-group_all$label = label
+group_all$labelNum = labelNum
+
+new_groups = group_all
+new_groups$funded_year = as.character(new_groups$funded_year)
+groups = model.matrix(~company_category_code+company_country_code+funding_round_type+funded_year+labelNum, data = new_groups)
