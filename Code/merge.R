@@ -91,5 +91,9 @@ trainDescr <- predict(xTrans, trainDescr)
 testDescr  <- predict(xTrans,  testDescr)
 
 set.seed(2)
-svmFit <- train(trainDescr, trainClass, method = "svmRadial", tuneLength = 5, scaled = FALSE)
+knnFit <- knn3(trainDescr, trainClass, k = 5)
+pred <- predict(knnFit, testDescr)
+
+bootControl <- trainControl(number = 200)
+knnFit2 <- train(trainDescr, trainClass, method="knn", tuneLength = 20, trControl = bootControl, scaled = FALSE)
 
