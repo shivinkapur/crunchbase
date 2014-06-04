@@ -3,3 +3,4 @@ Code/Data/all_data.csv
 Data/*.csv
 Code/tree.dot
 Code/tree.pdf
+*.csv
