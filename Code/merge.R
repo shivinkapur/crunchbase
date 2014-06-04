@@ -50,20 +50,32 @@ colnames(features)
 # [1] "category_code"          "status"                 "country_code"           "funding_rounds"         "founded_year"          
 # [6] "investor_category_code" "investor_country_code"  "funding_round_type.y"   "funded_year.y"          "quarters"
 #[11] "labelNum"  
-features$funded_year.y = as.character(features$funded_year.y)
+#features$funded_year.y = as.character(features$funded_year.y)
+
+#features = read.csv("features.csv")
+#features = features[c(2:4, 6:11,13,14)]
 
 # Converts qualitative to quantitative
 new_features = model.matrix(~., data=features)
 
 install.packages("caret")
+install.packages("kernlab")
 library(caret)
+library(kernlab)
 
+# extract descriptors
 new_features_2 = as.data.frame(new_features)
-descr = new_features_2[c(1:309)]
+descr = new_features_2[c(1:288)]
+
+# Check if predictors have zero variance
+removeCol = nearZeroVar(descr)
+new_descr = descr[-removeCol]
+descr = new_descr
 
 amount = as.character(new_features_2$labelNum)
 amount = as.factor(amount)
 set.seed(1)
+
 inTrain <- createDataPartition(amount, p = 3/4, list = FALSE)
 
 trainDescr <- descr[inTrain,]
@@ -72,3 +84,12 @@ trainClass <- amount[inTrain]
 testClass  <- amount[-inTrain]
 prop.table(table(amount))
 prop.table(table(trainClass))
+
+# Transform predictors since different type of predictor variables may be needed by models
+xTrans <- preProcess(trainDescr)
+trainDescr <- predict(xTrans, trainDescr)
+testDescr  <- predict(xTrans,  testDescr)
+
+set.seed(2)
+svmFit <- train(trainDescr, trainClass, method = "svmRadial", tuneLength = 5, scaled = FALSE)
+
