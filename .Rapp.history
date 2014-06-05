@@ -1,1334 +1,1198 @@
+library ("igraph")#
+#
+p <- 0.1 #
+# create random graph#
+g <- random.graph.game(1000, p, directed=F);#
+#
+is.connected(g)#
+#
+#get degree distribution#
+#
+degreesVector <- degree(g)#
+g <- random.graph.game(nodesNum , p , directed = FALSE)#
+dg2 <- degree(g)#
+degreesVector <- c(degreesVector, dg2)#
+#
+h <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))#
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+install.packages("igraph")
+library ("igraph")#
+#
+p <- 0.1 #
+# create random graph#
+g <- random.graph.game(1000, p, directed=F);#
+#
+is.connected(g)#
+#
+#get degree distribution#
+#
+degreesVector <- degree(g)#
+g <- random.graph.game(nodesNum , p , directed = FALSE)#
+dg2 <- degree(g)#
+degreesVector <- c(degreesVector, dg2)#
+#
+h <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))#
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+library ("igraph")#
+#
+p1 <- 0.1
+g1 <- random.graph.game(1000, p1, directed=F)#
+d1 <- degree.distribution(g1)
+plot(g1)
+plot(d1)
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.5#
+p3 <- 0.01#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+d1 <- degree.distribution(g1)#
+plot(d1)#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+d2 <- degree.distribution(g2)#
+plot(d1)#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+d3 <- degree.distribution(g3)#
+plot(d1)#
+#
+is.connected(g1)#
+is.connected(g2)#
+is.connected(g3)
+g1 <- random.graph.game(1000, p1, directed=F)#
+d1 <- degree.distribution(g1)#
+hist(d1)#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+d2 <- degree.distribution(g2)#
+hist(d2)#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+d3 <- degree.distribution(g3)#
+hist(d3)
+g1 <- random.graph.game(1000, p1, directed=F)#
+> d1 <- degree.distribution(g1)#
+> hist(d1)
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.5#
+p3 <- 0.01#
+#
+par(mfrow=c(2,2))#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+d1 <- degree.distribution(g1)#
+hist(d1)#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+d2 <- degree.distribution(g2)#
+hist(d2)#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+d3 <- degree.distribution(g3)#
+hist(d3)
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+g <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g)#
+g <- random.graph.game(1000 , p , directed = FALSE)#
+dg2 <- degree(g)#
+degreesVector <- c(degreesVector, dg2)#
+h <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+p <- .1
+g <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g)#
+g <- random.graph.game(1000 , p , directed = FALSE)#
+dg2 <- degree(g)#
+degreesVector <- c(degreesVector, dg2)#
+h <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.5#
+p3 <- 0.01#
+#
+par(mfrow=c(2,2))#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+degreesVector2 <- degree(g2)#
+h2 <- hist(degreesVector2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2 , type="o")#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+degreesVector3 <- degree(g3)#
+h3 <- hist(degreesVector3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl3 <- data.frame(x=h3$mids, y=h3$density)#
+plot(pl3 , type="o")#
+is.connected(g1)#
+is.connected(g2)#
+is.connected(g3)
+clear
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.5#
+p3 <- 0.01#
+#
+par(mfrow=c(3,2))#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+degreesVector2 <- degree(g2)#
+h2 <- hist(degreesVector2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2 , type="o")#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+degreesVector3 <- degree(g3)#
+h3 <- hist(degreesVector3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl3 <- data.frame(x=h3$mids, y=h3$density)#
+plot(pl3 , type="o")#
+is.connected(g1)#
+is.connected(g2)#
+is.connected(g3)
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.5#
+p3 <- 0.01#
+#
+par(mfrow=c(3,2))#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+degreesVector2 <- degree(g2)#
+h2 <- hist(degreesVector2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector2)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2 , type="o")#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+degreesVector3 <- degree(g3)#
+h3 <- hist(degreesVector3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl3 <- data.frame(x=h3$mids, y=h3$density)#
+plot(pl3 , type="o")
+clear()
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.05#
+p3 <- 0.01#
+#
+par(mfrow=c(3,2))#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+degreesVector2 <- degree(g2)#
+h2 <- hist(degreesVector2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector2)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2 , type="o")#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+degreesVector3 <- degree(g3)#
+h3 <- hist(degreesVector3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl3 <- data.frame(x=h3$mids, y=h3$density)#
+plot(pl3 , type="o")#
+is.connected(g1)#
+is.connected(g2)#
+is.connected(g3)
+k = 1000#
+pc = 0#
+for(i in seq(0,1, by = 0.001)) {#
+	g_test <- random.graph.game(1000, i, directed=F)#
+	if(is.connected(g_test)) {#
+		pc = i#
+		break#
+	}#
+}#
+#
+print(pc)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+#
+par(mfrow=c(1,2))#
+#
+h_dd1 <- hist(dd1, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl_dd1 <- data.frame(x=h_dd1$mids, y=h_dd1$density)#
+plot(pl_dd1 , type="o")#
+h_dd2 <- hist(dd2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl_dd2 <- data.frame(x=h_dd2$mids, y=h_dd2$density)#
+plot(pl_dd2 , type="o")#
+#
+par(opar)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+#
+par(mfrow=c(2,2))#
+#
+h_dd1 <- hist(dd1, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl_dd1 <- data.frame(x=h_dd1$mids, y=h_dd1$density)#
+plot(pl_dd1 , type="o")#
+h_dd2 <- hist(dd2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl_dd2 <- data.frame(x=h_dd2$mids, y=h_dd2$density)#
+plot(pl_dd2 , type="o")#
+#
+par(opar)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+diameter(g)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+diameter(g)#
+#
+fg <- fastgreedy.community(g)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+mod <- modularity(g)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g)#
+#
+ug <- g #
+ug1 = as.undirected(ug, "collapse")#
+comm = fastgreedy.community(ug1)   #
+mem = community.to.membership(ug1, comm$merges, step=which.max(comm$modularity)-1)#
+barplot(table(v3$csize))#
+#
+dev.off()
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g)#
+#
+ug <- g #
+ug1 = as.undirected(ug, "collapse")#
+comm = fastgreedy.community(ug1)   #
+mem = community.to.membership(ug1, comm$merges, step=which.max(comm$modularity)-1)#
+barplot(table(mem$csize))
+modularity(comm)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+max(degree(g))#
+comm = fastgreedy.community(ug1)   #
+mem = community.to.membership(ug1, comm$merges, step=which.max(comm$modularity)-1)#
+barplot(table(mem$csize))#
+#
+modularity(comm)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+max(degree(g))#
+comm = fastgreedy.community(g)   #
+mem = community.to.membership(g, comm$merges, step=which.max(comm$modularity)-1)#
+barplot(table(mem$csize))#
+#
+modularity(comm)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+max(degree(g))#
+fgc <- fastgreedy.community(g)   #
+ctm <- community.to.membership(g, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+max(degree(g))#
+fgc = fastgreedy.community(g)   #
+ctm = community.to.membership(g, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+max(degree(g))#
+#
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g, directed = TRUE, unconnected = FALSE)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g)#
+#
+ebc <- edge.betweenness.community(g)#
+plot(ebc)#
+ebc_size <- sizes(ebc)#
+ebc_mem <- membership(ebc)
+plot.communities(ebc)
+plot.communities(ebc_mem)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g)#
+#
+ebc <- edge.betweenness.community(g)#
+plot(ebc)#
+ebc_size <- sizes(ebc)#
+ebc_mem = community.to.membership(g, ebc_mem$merges, step=which.max(ebc_mem$modularity)-1)#
+barplot(table(ebc_mem$csize))
+typeof(ebc)
+ebc
+plot(membership(ebc))
+plot(sizes(ebc))
+plot(modularity(ebc))
+plot(ebc$modularity)
+ebc
+ebc$modularity
+ebc$membership
+ebc$sizes
+ebc$size
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")#
+#
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)
+ar(mfrow=c(2,2))#
+#
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")#
+#
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)#
+par(opar)
+par(mfrow=c(2,2))#
+#
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")#
+#
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+barplot(table(fgc$membership))
+par(mfrow=c(2,2))#
+#
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")#
+#
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+barplot(table(fgc$membership))#
+#
+modularity(fgc)
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+gccIndex = which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+fg <- fastgreedy.community(gcc)#
+modularity(fg)
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+gccIndex_large = which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+modularity(fg_large)
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+gccIndex = which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(g, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+is.connected(fg)#
+modularity(fg)
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)
+par(mfrow=c(1,2))#
+#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+gccIndex <- which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(gcc, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+is.connected(fg)#
+modularity(fg)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g+large, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)
+par(mfrow=c(2,1))#
+#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+gccIndex <- which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(gcc, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+is.connected(fg)#
+modularity(fg)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g+large, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)
+k = 1000#
+pc_low = 0#
+pc_high = 1#
+nc = 1000#
+for(j in 1:nc) {#
+	for(i in seq(0,1, by = 0.001)) {#
+		g_test <- random.graph.game(1000, i, directed=F)#
+		if(is.connected(g_test)) {#
+			if(pc_low > i) {#
+				pc_low = i#
+			}#
+			if(pc_high < i) {#
+				pc_high = i#
+			}#
+			break#
+		}#
+	}#
+}#
+#
+print(pc_low)#
+print(pc_high)
+k = 1000#
+pc_low = 1#
+pc_high = 0#
+nc = 1000#
+for(j in 1:nc) {#
+	for(i in seq(0,1, by = 0.001)) {#
+		g_test <- random.graph.game(1000, i, directed=F)#
+		if(is.connected(g_test)) {#
+			if(pc_low > i) {#
+				pc_low = i#
+			}#
+			if(pc_high < i) {#
+				pc_high = i#
+			}#
+			break#
+		}#
+	}#
+}#
+#
+print(pc_low)#
+print(pc_high)
+par(mfrow=c(2,1))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+gccIndex <- which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(gcc, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+is.connected(fg)#
+modularity(fg)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g+large, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)
+fg_large
+fg_large$modularity
+par(mfrow=c(4,2))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+degreesVector <- degree(g)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+gccIndex <- which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+#### b)#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(gcc, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+is.connected(fg)#
+modularity(fg)#
+hist(fg$modularity, breaks = 50)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+#### c)#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+#
+degreesVector <- degree(g_large)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g_large, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)#
+hist(fgc_large$modularity, breaks = 50)
+par(mfrow=c(4,2))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+is.connected(g)#
+degreesVector <- degree(g)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+gccIndex <- which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+#### b)#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(gcc, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fg)#
+hist(fg$modularity, breaks = 50)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+#### c)#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+#
+degreesVector <- degree(g_large)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g_large, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)#
+hist(fg_large$modularity, breaks = 50)
+p1 <- 0.1 #
+p2 <- 0.05#
+p3 <- 0.01#
+#
+par(mfrow=c(3,2))#
+#
+#### a)#
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+degreesVector2 <- degree(g2)#
+h2 <- hist(degreesVector2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector2)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2 , type="o")#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+degreesVector3 <- degree(g3)#
+h3 <- hist(degreesVector3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl3 <- data.frame(x=h3$mids, y=h3$density)#
+plot(pl3 , type="o")#
+#
+#### b)#
+is.connected(g1)#
+is.connected(g2)#
+is.connected(g3)#
+#
+diameter(g1)#
+diameter(g2)#
+diameter(g3)#
+#
+k = 1000#
+pc_low = 1#
+pc_high = 0#
+nc = 1000#
+for(j in 1:nc) {#
+	for(i in seq(0,1, by = 0.001)) {#
+		g_test <- random.graph.game(1000, i, directed=F)#
+		if(is.connected(g_test)) {#
+			if(pc_low > i) {#
+				pc_low = i#
+			}#
+			if(pc_high < i) {#
+				pc_high = i#
+			}#
+			break#
+		}#
+	}#
+}#
+#
+print(pc_low)#
+print(pc_high)
+par(mfrow=c(4,2))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+is.connected(g)#
+#
+degreesVector <- degree(g)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+#### b)#
+fg <- fastgreedy.community(g)#
+ctm <- community.to.membership(g, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fg)#
+hist(fg$modularity, breaks = 50)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+#### c)#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+#
+degreesVector <- degree(g_large)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+fg_large <- fastgreedy.community(g_large)#
+ctm_large <- community.to.membership(g_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)#
+hist(fg_large$modularity, breaks = 50)#
+#
+dev.off()
+par(mfrow=c(4,2))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+is.connected(g)#
+#
+degreesVector <- degree(g)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+#### b)#
+fg <- fastgreedy.community(g)#
+ctm <- community.to.membership(g, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fg)#
+hist(fg$modularity, breaks = 50)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+#### c)#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+#
+degreesVector <- degree(g_large)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+fg_large <- fastgreedy.community(g_large)#
+ctm_large <- community.to.membership(g_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)#
+hist(fg_large$modularity, breaks = 50)
+par(mfrow=c(2,2))#
+#
+#### a)#
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")#
+#
+g1 <- g #
+ung <- as.undirected(g1, "collapse")#
+fgc <- fastgreedy.community(ung)   #
+ctm <- community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+#### b)#
+modularity(fgc)#
+hist(fgc$modularity, breaks = 50)
+a)#
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+#### b)#
+is.connected(g)#
+clusters(g)#
+diameter(g)#
+#
+#### c)#
+ebc <- edge.betweenness.community(g)#
+ebc_mem <- membership(ebc)#
+plot(ebc_mem)#
+ebc_mod <- modularity(ebc)
+hist(ebc$modularity, breaks = 50)
+g <- barabasi.game(1000, directed = FALSE)
+neighborhood.size(g, 1, nodes=i)
+neighborhood.size(g, 1, i)
+set.seed(100)#
+i = floor(runif(1)*1000)#
+neighborhood.size(g, 1, i)
+i
+degreeVector
+degreesVector
+set.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+j = floor(runif(1)*nbr_size)#
+#
+nbr <- data.frame(neighbourhood(g, 1, i))
+set.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+j = floor(runif(1)*nbr_size)#
+#
+nbr <- data.frame(neighborhood(g, 1, i))
+nbr
+nbr[2]
+nbr[2,]
+j = floor(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr)#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+g_nbr
+degree(g_nbr)
+degree.distribution(g_nbr)
+g_nbr[[1]]
+degree.distribution(g_nbr[[1]])
+j = floor(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+et.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = floor(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+g_nbr[[1]]
+g_nbr
+g <- barabasi.game(1000, directed = FALSE)
+set.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = floor(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+g_nbr
+g_nbr[1]
+g_nbr[2]
+g_nbr[0]
+g_nbr[[0]]
+g_nbr[0]
+g_nbr[0,]
+typeof(g_nbr)
+g_nbr
+g_nbr[1]
+set.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = ceiling(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+g_nbr
+g_nbr[[1]]
+g_nbr[[0]]
+set.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = ceiling(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+j
+i
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = ceiling(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+par(mfrow=c(5,2))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+is.connected(g)#
+#
+degreesVector <- degree(g)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+#### b)#
+fg <- fastgreedy.community(g)#
+ctm <- community.to.membership(g, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fg)#
+hist(fg$modularity, breaks = 50)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+#### c)#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+#
+degreesVector <- degree(g_large)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+fg_large <- fastgreedy.community(g_large)#
+ctm_large <- community.to.membership(g_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)#
+hist(fg_large$modularity, breaks = 50)#
+#
+#### d)#
+#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = ceiling(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+par(mfrow=c(2,1))#
+#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = ceiling(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+install.packages("/Users/raghav297/Downloads/igraph_0.6.tar.gz", repos = NULL, type="source")
+remove.packages("/Users/raghav297/Downloads/netrw_0.2.6_R_i386-apple-darwin9.8.0.tar")
+remove.packages("netrw_0.2.6_R_i386-apple-darwin9.8.0.tar")
+remove.packages("netrw_0.2.6_R_i386-apple-darwin9.8.0.tar", "/Users/raghav297/Downloads/")
+install.packages("/Library/igraph_0.6.tar.gz", repos = NULL, type="source")
 library(igraph)
-A= spMatrix(nrow=length(unique(acquirer_companytop1000$acquirer)),#
-	ncol=length(unique(acquirer_companytop1000$company)),#
-	i=as.numeric(factor(acquirer_companytop1000$acquirer)),#
-	j=as.numeric(factor(acquirer_companytop1000$company)),#
-	x=rep(1, length(as.numeric(acquirer_companytop1000$acquirer)))  )#
-#
-row.names(A)= levels(factor(acquirer_companytop1000$acquirer))#
-colnames(A)= levels(factor(acquirer_companytop1000$company))#
-#
-iAC= graph.incidence(A, mode=c("all"))#
-#
-#plot two-made graph#
-#check and change these index values everytime #
-V(iAC)$color[1:571] <- rgb(1,0,0,.5) #investors 1:2136 for top1000 #
-V(iAC)$color[572:681] <- rgb(0,1,0,.5) #companies 2137:2967 for top1000#
-#
-V(iAC)$label <- V(iAC)$name#
-V(iAC)$label.color <- rgb(0,0,.2,.5)#
-V(iAC)$label.cex <- .4#
-V(iAC)$size <- 6#
-V(iAC)$frame.color <- NA#
-#
-E(iAC)$color <- rgb(.5,.5,0,.2)#
-#
-pdf("iAC_top1000companies.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)#
-dev.off()
-acquirer_company= data.frame(acquisitions$acquirer_name, acquisitions$company_name)#
-colnames(acquirer_company)=c("acquirer", "company")#
-#
-acquirer_companytop1000= subset(acquirer_company, company %in% company_names_top1000$name)#
-dim(acquirer_companytop1000)
-A= spMatrix(nrow=length(unique(acquirer_companytop1000$acquirer)),#
-	ncol=length(unique(acquirer_companytop1000$company)),#
-	i=as.numeric(factor(acquirer_companytop1000$acquirer)),#
-	j=as.numeric(factor(acquirer_companytop1000$company)),#
-	x=rep(1, length(as.numeric(acquirer_companytop1000$acquirer)))  )#
-#
-row.names(A)= levels(factor(acquirer_companytop1000$acquirer))#
-colnames(A)= levels(factor(acquirer_companytop1000$company))#
-#
-iAC= graph.incidence(A, mode=c("all"))
-V(iAC)$color[1:571] <- rgb(1,0,0,.5) #investors 1:2136 for top1000 #
-V(iAC)$color[572:681] <- rgb(0,1,0,.5) #companies 2137:2967 for top1000#
-#
-V(iAC)$label <- V(iAC)$name#
-V(iAC)$label.color <- rgb(0,0,.2,.5)#
-V(iAC)$label.cex <- .4#
-V(iAC)$size <- 6#
-V(iAC)$frame.color <- NA#
-#
-E(iAC)$color <- rgb(.5,.5,0,.2)#
-#
-pdf("iAC_top1000companies.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)#
-dev.off()
-V(iAC)
-length(unique(acquirer_companytop1000$acquirer))
-length(unique(acquirer_companytop1000$company))
-sort(unique(acquirer_companytop1000$company))
-tail(sort(unique(acquirer_companytop1000$company)))
-tail(sort(unique(acquirer_companytop1000$acquirer)))
-V(iAC)$color[1:82] <- rgb(1,0,0,.5) # acquirers for top1000 #
-V(iAC)$color[83:167] <- rgb(0,1,0,.5) #companies for top1000#
-#
-V(iAC)$label <- V(iAC)$name#
-V(iAC)$label.color <- rgb(0,0,.2,.5)#
-V(iAC)$label.cex <- .4#
-V(iAC)$size <- 6#
-V(iAC)$frame.color <- NA#
-#
-E(iAC)$color <- rgb(.5,.5,0,.2)#
-#
-pdf("iAC_top1000companies.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)#
-dev.off()
-V(iAC)$label[1:230] <- NA#
-V(iAC)$color[1:230] <-  rgb(1,0,0,.1)#
-V(iAC)$size[1:230] <- 2#
-E(iAC)$width <- .3#
-E(iAC)$color <- rgb(.5,.5,0,.1)#
-pdf("iAC_top1000companies.2.pdf")#
-plot(iAC, main= "Two-mode incidence graph", layout=layout.kamada.kawai)#
-dev.off()#
-pdf("iAC_top1000companies.3.pdf")#
-plot(iIC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold.grid)#
-dev.off()#
-#gives best plot : it really emphasizes centrality–the nodes that are most central #
-#are nearly always placed in the middle of the plot#
-pdf("iAC_top1000companies.4.pdf")#
-plot(iIC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)#
-dev.off()
-V(iAC)$label[1:82] <- NA#
-V(iAC)$color[1:82] <-  rgb(1,0,0,.1)#
-V(iAC)$size[1:82] <- 2#
-E(iAC)$width <- .3#
-E(iAC)$color <- rgb(.5,.5,0,.1)#
-pdf("iAC_top1000companies.2.pdf")#
-plot(iAC, main= "Two-mode incidence graph", layout=layout.kamada.kawai)#
-dev.off()#
-pdf("iAC_top1000companies.3.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold.grid)#
-dev.off()#
-#gives best plot : it really emphasizes centrality–the nodes that are most central #
-#are nearly always placed in the middle of the plot#
-pdf("iAC_top1000companies.4.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)#
-dev.off()
-Arow= tcrossprod(A) #adjacency matrix for acquirers#
-print(head(Arow))#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for companies#
-print(head(Acol))
-Aacquirer= graph.adjacency(Arow, mode= "undirected") #
-#
-#we need to transform the graph so that multiply edges become an attribute#
-E(Aacquirer)$weight = count.multiple(Aacquirer)#
-Aacquirer = simplify(Aacquirer)#
-#
-#setting plotting parameters#
-# Set vertex attributes#
-V(Aacquirer)$label = V(Aacquirer)$name#
-V(Aacquirer)$label.color = rgb(0,0,.2,.8)#
-V(Aacquirer)$label.cex = .6#
-V(Aacquirer)$size = 6#
-V(Aacquirer)$frame.color = NA#
-V(Aacquirer)$color = rgb(0,0,1,.5)#
-# Set edge gamma according to edge weight#
-egam <- (log(E(Aacquirer)$weight)+.3)/max(log(E(Aacquirer)$weight)+.3)#
-E(Aacquirer)$color <- rgb(.5,.5,0,egam)#
-#
-pdf("Aacquirer_top1000companies.pdf")#
-plot(Aacquirer, main = "Adjacency Graph of Acquirers", layout=layout.kamada.kawai)#
-plot(Aacquirer, main = "Adjacency Graph of Acquirers", layout=layout.fruchterman.reingold)#
-dev.off()#
-#
-#adjacency matrix of companies#
-Acompanies= graph.adjacency(Acol, mode= "undirected") #
-#
-#we need to transform the graph so that multiply edges become an attribute#
-E(Acompanies)$weight = count.multiple(Acompanies)#
-Acompanies = simplify(Acompanies)#
-#
-#setting plotting parameters#
-# Set vertex attributes#
-V(Acompanies)$label = V(Acompanies)$name#
-V(Acompanies)$label.color = rgb(0,0,.2,.8)#
-V(Acompanies)$label.cex = .6#
-V(Acompanies)$size = 6#
-V(Acompanies)$frame.color = NA#
-V(Acompanies)$color = rgb(0,0,1,.5)#
-# Set edge gamma according to edge weight#
-egam <- (log(E(Acompanies)$weight)+.3)/max(log(E(Acompanies)$weight)+.3)#
-E(Acompanies)$color <- rgb(.5,.5,0,egam)#
-#
-pdf("Aacqcompanies_top1000companies.pdf")#
-plot(Acompanies, main = "Adjacency Graph of Acquired Companies", layout=layout.kamada.kawai)#
-plot(Acompanies, main = "Adjacency Graph of Acquired Companies", layout=layout.fruchterman.reingold)#
-dev.off()
-head(acquirer_company)
-head(acquirer_company)
-dim(acquirer_company)
-names(acquirer_company)
-head(acquirer_company$company)
-head(acquirer_company$acquirer)
-length(unique(acquirer_company$acquirer))
-length(unique(acquirer_company$company))
-A= spMatrix(nrow=length(unique(acquirer_company$acquirer)),#
-	ncol=length(unique(acquirer_company$company)),#
-	i=as.numeric(factor(acquirer_company$acquirer)),#
-	j=as.numeric(factor(acquirer_company$company)),#
-	x=rep(1, length(as.numeric(acquirer_company$acquirer)))  )#
-#
-row.names(A)= levels(factor(acquirer_company$acquirer))#
-colnames(A)= levels(factor(acquirer_company$company))#
-#
-Arow= tcrossprod(A) #adjacency matrix for acquirers#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for companies
-dim(A)
-dim(Arow)
-dim(Arow[1:1000, 1:1000])
-Arow= Arow[1:50, 1:50]#
-olacquirer= Arow/diag(Arow)#
-olacquirer=as.matrix(olacquirer)#
-olacquirerg= graph.adjacency(olacquirer, weighted=T)#
-#
-#Degree#
-V(olacquirerg)$degree= degree(olacquirerg)#
-#
-#Betweenness centrality#
-V(olacquirerg)$btwcnt= betweenness(olacquirerg)#
-#
-#distribution of connection strength#
-plot(density(olacquirerg), main="Distribution of Connection Strength")
-dim(Arow)
-mode(Arow)
-mode(olacquirer)
-mode(olacquirerg)
-olacquirerg= graph.adjacency(olacquirer, weighted=T)
-mode(olacquirerg)
-head(olacquirerg)
-dim(olacquirerg)
-olacquirerg=as.matrix(olacquirerg)
-head(olacquirerg)
-mode(olacquirerg)
-olacquirer1 = olacquirer#
-#olInvestors1[olInvestors<0.5] = 0#
-olacquirer1g = graph.adjacency(olacquirer1, weighted=T)#
-#
-#remove loops#
-olacquirer1g<- simplify(olacquirer1g, remove.multiple=FALSE, remove.loops=TRUE)#
-#
-#hand placing nodes to make sure no labels overlap#
-olacquirer1g$layout <- layout.fruchterman.reingold(olacquirer1g)#
-V(olacquirer1g)$label <- V(olacquirer1g)$name#
-tkplot(olacquirer1g)
-A= spMatrix(nrow=length(unique(acquirer_companytop1000$acquirer)),#
-	ncol=length(unique(acquirer_companytop1000$company)),#
-	i=as.numeric(factor(acquirer_companytop1000$acquirer)),#
-	j=as.numeric(factor(acquirer_companytop1000$company)),#
-	x=rep(1, length(as.numeric(acquirer_companytop1000$acquirer)))  )#
-#
-row.names(A)= levels(factor(acquirer_companytop1000$acquirer))#
-colnames(A)= levels(factor(acquirer_companytop1000$company))
-Arow= tcrossprod(A) #adjacency matrix for acquirers#
-print(head(Arow))#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for companies#
-print(head(Acol))
-olacquirer= Arow/diag(Arow)#
-olacquirer=as.matrix(olacquirer)#
-olacquirerg= graph.adjacency(olacquirer, weighted=T)#
-#Degree#
-V(olacquirerg)$degree= degree(olacquirerg)#
-#
-#Betweenness centrality#
-V(olacquirerg)$btwcnt= betweenness(olacquirerg)#
-#
-#distribution of connection strength#
-plot(density(olacquirerg), main="Distribution of Connection Strength")
-degree(olacquirerg)
-A= spMatrix(nrow=length(unique(acquirer_company$acquirer)),#
-	ncol=length(unique(acquirer_company$company)),#
-	i=as.numeric(factor(acquirer_company$acquirer)),#
-	j=as.numeric(factor(acquirer_company$company)),#
-	x=rep(1, length(as.numeric(acquirer_company$acquirer)))  )#
-#
-row.names(A)= levels(factor(acquirer_company$acquirer))#
-colnames(A)= levels(factor(acquirer_company$company))#
-#
-Arow= tcrossprod(A) #adjacency matrix for acquirers#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for companies
-olacquirer= Arow/diag(Arow)#
-olacquirer=as.matrix(olacquirer)#
-olacquirerg= graph.adjacency(olacquirer, weighted=T)#
-#Degree#
-V(olacquirerg)$degree= degree(olacquirerg)#
-#
-#Betweenness centrality#
-V(olacquirerg)$btwcnt= betweenness(olacquirerg)
-degree(olacquirerg)
-max(degree(olacquirerg))
-summary(degree(olacquirerg))
-which(degree(olacquirerg)==12)
-which(degree(olacquirerg) in 5:12)
-which(degree(olacquirerg) %in% 5:12)
-unique(acuirer_company$acquirer)[85]
-unique(acquirer_company$acquirer)[85]
-unique(acquirer_company$acquirer)[5232]
-V(olacquirer)[5232]
-V(olacquirerg)[5232]
-V(olacquirerg)[85]
-V(olacquirerg)[which(degree(olacquirerg) %in% 5:12)]
-V(olacquirerg)[which(degree(olacquirerg) %in% 4:12)]
-V(olacquirerg)[which(degree(olacquirerg) %in% 3:12)]
-V(olacquirerg)[which(degree(olacquirerg) %in% 2:12)]
-plot(density(olacquirer), main="Distribution of Connection Strength")
-A= spMatrix(nrow=length(unique(acquirer_company$acquirer)),#
-	ncol=length(unique(acquirer_company$company)),#
-	i=as.numeric(factor(acquirer_company$acquirer)),#
-	j=as.numeric(factor(acquirer_company$company)),#
-	x=rep(1, length(as.numeric(acquirer_company$acquirer)))  )#
-#
-row.names(A)= levels(factor(acquirer_company$acquirer))#
-colnames(A)= levels(factor(acquirer_company$company))#
-#
-Arow= tcrossprod(A) #adjacency matrix for acquirers#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for companies#
-#
-#taking only 50 acquirers#
-olacquirer= Arow/diag(Arow)#
-olacquirer=as.matrix(olacquirer)#
-olacquirerg= graph.adjacency(olacquirer, weighted=T)#
-#Degree#
-V(olacquirerg)$degree= degree(olacquirerg)#
-#
-#Betweenness centrality#
-V(olacquirerg)$btwcnt= betweenness(olacquirerg)#
-#
-#distribution of connection strength#
-plot(density(olacquirer), main="Distribution of Connection Strength")
-betweenness(olacquirerg)
-iAC= graph.incidence(A, mode=c("all"))
-V(iAC)
-length(unique(acquirer_company$acquirer))
-V(iAC)$color[1:5369] <- rgb(1,0,0,.5) # acquirers #
-V(iAC)$color[5370:15657] <- rgb(0,1,0,.5) #companies #
-#
-V(iAC)$label <- V(iAC)$name#
-V(iAC)$label.color <- rgb(0,0,.2,.5)#
-V(iAC)$label.cex <- .4#
-V(iAC)$size <- 6#
-V(iAC)$frame.color <- NA#
-#
-E(iAC)$color <- rgb(.5,.5,0,.2)#
-#
-pdf("iAC.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)#
-dev.off()
-iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)==2 ])
-length(V(iAC))
-iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)==3 ])
-length(V(iAC))
-iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)<=3 ])
-length(V(iAC))
-iAC= graph.incidence(A, mode=c("all"))
-iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)<=2 ])
-length(V(iAC))
-iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)<=3 ])
-V(iAC)
-length(V(iAC))
-iAC= graph.incidence(A, mode=c("all"))
-iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)<=3 ])
-length(V(iAC))
-V(iAC)
-iAC= graph.incidence(A, mode=c("all"))
-length(V(iAC))
-V(iAC)[1:5369]=paste(V(iAC)[1:5369], "_acq", sep="")
-row.names(A) = paste(row.names(A), "_acq", sep="")
-head(A)
-Arow= tcrossprod(A) #adjacency matrix for acquirers#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for companies#
-iAC= graph.incidence(A, mode=c("all"))
-iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)<=3 ])
-V(iAC)
-iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)<=3 ]) #
-V(iAC)$label[1:472] <- NA#
-V(iAC)$color[1:472] <-  rgb(1,0,0,.1)#
-V(iAC)$size[1:472] <- 2#
-E(iAC)$width <- .3#
-E(iAC)$color <- rgb(.5,.5,0,.1)#
-pdf("iAC.2.pdf")#
-plot(iAC, main= "Two-mode incidence graph", layout=layout.kamada.kawai)#
-dev.off()#
-pdf("iAC.3.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold.grid)#
-dev.off()#
-#gives best plot : it really emphasizes centrality–the nodes that are most central #
-#are nearly always placed in the middle of the plot#
-pdf("iAC.4.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)#
-dev.off()
-iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)<=1 ])
-length(V(iAC))
-iAC= graph.incidence(A, mode=c("all"))
-length(V(iAC))
-iAC <- delete.vertices(iAC, V(iAC)[ degree(iAC)<=1 ])
-length(V(iAC))
-V(iAC)
-V(iAC)$label[1:1441] <- NA#
-V(iAC)$color[1:1441] <-  rgb(1,0,0,.1)#
-V(iAC)$size[1:1441] <- 2#
-E(iAC)$width <- .3#
-E(iAC)$color <- rgb(.5,.5,0,.1)#
-pdf("iAC.2.pdf")#
-plot(iAC, main= "Two-mode incidence graph", layout=layout.kamada.kawai)#
-dev.off()#
-pdf("iAC.3.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold.grid)#
-dev.off()#
-#gives best plot : it really emphasizes centrality–the nodes that are most central #
-#are nearly always placed in the middle of the plot#
-pdf("iAC.4.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)#
-dev.off()
-A= spMatrix(nrow=length(unique(acquirer_companytop1000$acquirer)),#
-	ncol=length(unique(acquirer_companytop1000$company)),#
-	i=as.numeric(factor(acquirer_companytop1000$acquirer)),#
-	j=as.numeric(factor(acquirer_companytop1000$company)),#
-	x=rep(1, length(as.numeric(acquirer_companytop1000$acquirer)))  )#
-#
-row.names(A)= levels(factor(acquirer_companytop1000$acquirer))#
-colnames(A)= levels(factor(acquirer_companytop1000$company))
-Arow= tcrossprod(A) #adjacency matrix for acquirers#
-print(head(Arow))#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for companies#
-print(head(Acol))#
-#
-#adjacency matrix of investors#
-Aacquirer= graph.adjacency(Arow, mode= "undirected")
-E(Aacquirer)$weight = count.multiple(Aacquirer)#
-Aacquirer = simplify(Aacquirer)
-V(Aacquirer)$label = V(Aacquirer)$name
-jaccard.similarities= similarity.jaccard(Aacquirer)#
-heatmap(jaccard.similarities, symm=TRUE, main="Jaccard Similarity",#
-	cexRow=0.5, cexCol=0.5)
-investments=read.csv("/Users/Work/Documents/CS249/project/crunchbase/Data/investments.csv", header=TRUE)#
-investments=na.omit(investments)#
-#
-#print(head(investments))#
-print(dim(investments))#
-#
-investor_company=data.frame(investments$investor_name, investments$company_name)#
-colnames(investor_company)=c("investor", "company")#
-#
-#taking top1000 companies and investors based on total funding #
-company_names_top1000=read.csv("company_names_top1000.csv", header=TRUE)#
-company_names_top110=company_names_top1000$name[1:150]#
-investor_companytop110=subset(investor_company, company %in% company_names_top110)#
-print(dim(investor_companytop110))
-investor_companytop110$investor= as.character(as.vector(investor_companytop110$investor))#
-investor_companytop110$company= as.character(as.vector(investor_companytop110$company))#
-#two mode incidence matrix to one mode adjacency matrix conversion#
-#
-#incidence matrix#
-A= spMatrix(nrow=length(unique(investor_companytop110$investor)),#
-	ncol=length(unique(investor_companytop110$company)),#
-	i=as.numeric(factor(investor_companytop110$investor)),#
-	j=as.numeric(factor(investor_companytop110$company)),#
-	x=rep(1, length(as.numeric(investor_companytop110$investor)))  )#
-#
-row.names(A)= levels(factor(investor_companytop110$investor))#
-colnames(A)= levels(factor(investor_companytop110$company))#
-#
-iIC= graph.incidence(A, mode=c("all"))
-Arow= tcrossprod(A) #adjacency matrix for investors#
-print(head(Arow))#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for companies#
-print(head(Acol))#
-#
-#adjacency matrix of investors#
-Ainvestors= graph.adjacency(Arow, mode= "undirected") #
-#
-#we need to transform the graph so that multiply edges become an attribute#
-E(Ainvestors)$weight = count.multiple(Ainvestors)#
-Ainvestors = simplify(Ainvestors)#
-#
-#setting plotting parameters#
-# Set vertex attributes#
-V(Ainvestors)$label = V(Ainvestors)$name
-jaccard.similarities= similarity.jaccard(Ainvestors)#
-heatmap(jaccard.similarities, symm=TRUE, main="Jaccard Similarity of Investors",#
-	cexRow=0.5, cexCol=0.5)
-company_names_top110=company_names_top1000$name[1:25]#
-investor_companytop110=subset(investor_company, company %in% company_names_top110)#
-print(dim(investor_companytop110))
-investor_companytop110$investor= as.character(as.vector(investor_companytop110$investor))#
-investor_companytop110$company= as.character(as.vector(investor_companytop110$company))#
-#two mode incidence matrix to one mode adjacency matrix conversion#
-#
-#incidence matrix#
-A= spMatrix(nrow=length(unique(investor_companytop110$investor)),#
-	ncol=length(unique(investor_companytop110$company)),#
-	i=as.numeric(factor(investor_companytop110$investor)),#
-	j=as.numeric(factor(investor_companytop110$company)),#
-	x=rep(1, length(as.numeric(investor_companytop110$investor)))  )#
-#
-row.names(A)= levels(factor(investor_companytop110$investor))#
-colnames(A)= levels(factor(investor_companytop110$company))
-Arow= tcrossprod(A) #adjacency matrix for investors#
-print(head(Arow))#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for companies#
-print(head(Acol))#
-#
-#adjacency matrix of investors#
-Ainvestors= graph.adjacency(Arow, mode= "undirected") #
-#
-#we need to transform the graph so that multiply edges become an attribute#
-E(Ainvestors)$weight = count.multiple(Ainvestors)#
-Ainvestors = simplify(Ainvestors)#
-#
-#setting plotting parameters#
-# Set vertex attributes#
-V(Ainvestors)$label = V(Ainvestors)$name
-jaccard.similarities= similarity.jaccard(Ainvestors)#
-heatmap(jaccard.similarities, symm=TRUE, main="Jaccard Similarity of Investors",#
-	cexRow=0.5, cexCol=0.5)
-pdf("Jaccard_Similarity_Investors.pdf")#
-heatmap(jaccard.similarities, symm=TRUE, main="Jaccard Similarity of Investors of Top 20 Funded Companies",#
-	cexRow=0.5, cexCol=0.5)#
-dev.off()
-pdf("Jaccard_Similarity_Investors.pdf")#
-heatmap(jaccard.similarities, symm=TRUE, main="J S of Investors (Top 20 Companies)",#
-	cexRow=0.5, cexCol=0.5)#
-dev.off()
-pdf("Jaccard_Similarity_Investors.pdf")#
-par(mar=c(2,2,2,2))#
-heatmap(jaccard.similarities, symm=TRUE, main="J S of Investors (Top 20 Companies)",#
-	cexRow=0.5, cexCol=0.5)#
-dev.off()
-pdf("Jaccard_Similarity_Investors.pdf")#
-par(mar=c(4,4,4,4))#
-heatmap(jaccard.similarities, symm=TRUE, main="J S of Investors (Top 20 Companies)",#
-	cexRow=0.5, cexCol=0.5)#
-dev.off()
-Acompanies= graph.adjacency(Acol, mode= "undirected") #
-#
-#we need to transform the graph so that multiply edges become an attribute#
-E(Acompanies)$weight = count.multiple(Acompanies)#
-Acompanies = simplify(Acompanies)#
-#
-#setting plotting parameters#
-# Set vertex attributes#
-V(Acompanies)$label = V(Acompanies)$name
-jaccard.similarities= similarity.jaccard(Acompanies)#
-par(mar=c(2,2,2,2))#
-heatmap(jaccard.similarities, symm=TRUE, main="J S of Top 20 Funded Companies",#
-	cexRow=0.5, cexCol=0.5)#
-dev.off()
-jaccard.similarities= similarity.jaccard(Acompanies)#
-pdf("Jaccard_Similarity_Companies.pdf")#
-heatmap(jaccard.similarities, symm=TRUE, main="J S of Top 20 Funded Companies",#
-	cexRow=0.5, cexCol=0.5)#
-dev.off()
-heatmap(jaccard.similarities, symm=TRUE, main="J S of Top 20 Funded Companies",#
-	cexRow=0.5, cexCol=0.5, col=blueyellow(64))
-install.packages("ClassDiscovery")
-library(ClassDiscovery)
-install.packages("colorschemes")
-library(colorschemes)
-head(t(A))
-library(ggplot2)#
-library(reshape2)#
-m = melt(cor(t(A)))
-data(movies)#
-movieGenres <- movies[c(18:23)]
-head(movieGenres)
-A=as.matrix(A)#
-m = melt(cor(A))
-head(m)
-m
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p <- ggplot(data=m, aes(x=Var1, y=Var2, fill=value)) + geom_tile()#
-#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p
-p <- ggplot(data=m, aes(x=Top_20_Companies, y=Top_20_Companies, fill=value)) + geom_tile()+ opts(axis.text.x=theme_text(angle=-90))#
-#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p <- ggplot(data=m, aes(x=Top_20_Companies, y=Top_20_Companies, fill=value)) + geom_tile()#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p <- ggplot(data=m, aes(x=Top_20_Companies, y=Top_20_Companies, fill=value)) + geom_tile()#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p
-m
-head(m)
-colnames(m)=c("Company", "Company", "value")
-head(m)
-colnames(m)=c("Company", "Company", "value")#
-p <- ggplot(data=m, aes(x=Company, y=Company, fill=value)) + geom_tile()#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")#
-p
-p <- ggplot(data=m, aes(x=Company, y=Company, fill=value)) + geom_tile()#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")#
-p
-p <- ggplot(data=m, aes(x=Company, y=Company, fill=value)) + geom_tile()#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")#
-p
-p <- ggplot(data=m, aes(x=Company, y=Company, fill=value)) + geom_tile()#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")#
-p
-p <- ggplot(data=m, aes(x=Var1, y=Var2, fill=value)) + geom_tile()#
-#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p
-m = melt(cor(A))#
-#
-p <- ggplot(data=m, aes(x=Var1, y=Var2, fill=value)) + geom_tile()#
-#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p
-p <- ggplot(data=m, aes(x=Var1, y=Var2, fill=value), srt=45) + geom_tile()#
-#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p
-p <- ggplot(data=m, aes(x=Var1, y=Var2, fill=value)) + geom_tile()+opts(axis.text.x = theme_text(angle = 90))#
-#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p <- ggplot(data=m, aes(x=Var1, y=Var2, fill=value)) + geom_tile()+#
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p
-?melt
-mode(n)
-mode(m)
-colnames(m)=c("Company", "Company", "value")
-colnames(m)=c("Company1", "Company2", "value")
-p <- ggplot(data=m, aes(x=Company1, y=Company2, fill=value)) + geom_tile()+#
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p
-p <- ggplot(data=m, aes(x=Company1, y=Company2, fill=value), title="Similarity 20 Top Funded Companies") + geom_tile()+#
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) ) #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")
-p
-p <- ggplot(data=m, aes(x=Company1, y=Company2, fill=value)) + geom_tile()+#
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))#
-red=rgb(1,0,0); green=rgb(0,1,0); blue=rgb(0,0,1); white=rgb(1,1,1)#
-RtoWrange<-colorRampPalette(c(red, white ) )#
-WtoGrange<-colorRampPalette(c(white, green) )  #
-p <- p + scale_fill_gradient2(low=RtoWrange(100), mid=WtoGrange(100), high="gray")#
-p
-acq_comRegion= data.frame(acquisitions$acquirer_region, acquisitions$company_region, acquisitions$company_name)#
-colnames(acq_comRegion)=c("acqRegion", "comRegion", "company")#
-#
-acq_comRegion_top1000= subset(acq_comRegion, company %in% company_names_top1000$name)#
-#
-acq_comRegion$company=NULL#
-acq_comRegion_top1000$company=NULL#
-#
-dim(acq_comRegion)#
-length(unique(acq_comRegion$acqRegion))#
-length(unique(acq_comRegion$comRegion))#
-#
-dim(acq_comRegion_top1000)#
-length(unique(acq_comRegion_top1000$acqRegion))#
-length(unique(acq_comRegion_top1000$comRegion))
-A= spMatrix(nrow=length(unique(acq_comRegion_top1000$acqRegion)),#
-	ncol=length(unique(acq_comRegion_top1000$comRegion)),#
-	i=as.numeric(factor(acq_comRegion_top1000$acqRegion)),#
-	j=as.numeric(factor(acq_comRegion_top1000$comRegion)),#
-	x=rep(1, length(as.numeric(aacq_comRegion_top1000$acqRegion)))  )#
-#
-row.names(A)= levels(factor(acq_comRegion_top1000$acqRegion))#
-colnames(A)= levels(factor(acq_comRegion_top1000$comRegion)#
-row.names(A) = paste(row.names(A), "_acq", sep="")#
-#
-Arow= tcrossprod(A) #adjacency matrix for acquirer regions#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for company regions
-A= spMatrix(nrow=length(unique(acq_comRegion_top1000$acqRegion)),#
-	ncol=length(unique(acq_comRegion_top1000$comRegion)),#
-	i=as.numeric(factor(acq_comRegion_top1000$acqRegion)),#
-	j=as.numeric(factor(acq_comRegion_top1000$comRegion)),#
-	x=rep(1, length(as.numeric(acq_comRegion_top1000$acqRegion)))  )#
-#
-row.names(A)= levels(factor(acq_comRegion_top1000$acqRegion))#
-colnames(A)= levels(factor(acq_comRegion_top1000$comRegion)#
-row.names(A) = paste(row.names(A), "_acq", sep="")
-row.names(A)= levels(factor(acq_comRegion_top1000$acqRegion))#
-colnames(A)= levels(factor(acq_comRegion_top1000$comRegion))#
-row.names(A)= paste(row.names(A), "_acq", sep="")
-head(A)
-head(Acol)
-head(Arow)
-head(acq_comRegion)
-dim(acq_comRegion)
-acq_comRegion$acqRegion[acq_comRegion$acqRegion == "unkown"] = NA#
-acq_comRegion$comRegion[acq_comRegion$comRegion == "unkown"] = NA#
-acq_comRegion=na.omit(acq_comRegion)
-dim(acq_comRegion)
-head(acq_comRegion)
-DF <- data.frame(x = c(1, 2, 3), y = c(0, 10, NA))#
-na.omit(DF)
-acq_comRegion$acqRegion[acq_comRegion$acqRegion == "unkown"] = NA#
-acq_comRegion$comRegion[acq_comRegion$comRegion == "unkown"] = NA
-head(acq_comRegion)
-acq_comRegion$acqRegion[acq_comRegion$acqRegion == "unkown"] = "NA"#
-acq_comRegion$comRegion[acq_comRegion$comRegion == "unkown"] = "NA"
-head(acq_comRegion)
-acq_comRegion= acq_comRegion[acq_comRegion[,1:2] != "unknown"]
-head(acq_comRegion)
-dim(acq_comRegion)
-acq_comRegion= data.frame(acquisitions$acquirer_region, acquisitions$company_region, acquisitions$company_name)#
-colnames(acq_comRegion)=c("acqRegion", "comRegion", "company")#
-acq_comRegion= acq_comRegion[acq_comRegion[,1:2] != "unknown",]
-dim(acq_comRegion)
-head(acq_comRegion)
-acq_comRegion= acq_comRegion[acq_comRegion[,1] != "unknown",]#
-acq_comRegion= acq_comRegion[acq_comRegion[,2] != "unknown",]
-dim(acq_comRegion)
-head(acq_comRegion)
-acq_comRegion_top1000= subset(acq_comRegion, company %in% company_names_top1000$name)#
-#
-acq_comRegion$company=NULL#
-acq_comRegion_top1000$company=NULL#
-#
-dim(acq_comRegion)#
-length(unique(acq_comRegion$acqRegion))#
-length(unique(acq_comRegion$comRegion))#
-#
-dim(acq_comRegion_top1000)#
-length(unique(acq_comRegion_top1000$acqRegion))#
-length(unique(acq_comRegion_top1000$comRegion))
-A= spMatrix(nrow=length(unique(acq_comRegion_top1000$acqRegion)),#
-	ncol=length(unique(acq_comRegion_top1000$comRegion)),#
-	i=as.numeric(factor(acq_comRegion_top1000$acqRegion)),#
-	j=as.numeric(factor(acq_comRegion_top1000$comRegion)),#
-	x=rep(1, length(as.numeric(acq_comRegion_top1000$acqRegion)))  )#
-#
-row.names(A)= levels(factor(acq_comRegion_top1000$acqRegion))#
-colnames(A)= levels(factor(acq_comRegion_top1000$comRegion))#
-row.names(A)= paste(row.names(A), "_acq", sep="")#
-#
-Arow= tcrossprod(A) #adjacency matrix for acquirer regions#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for company regions
-head(Acol)
-head(Arow)
-head(A)
-olAcqRegions= Arow/diag(Arow)#
-olAcqRegions=as.matrix(olAcqRegions)#
-olAcqRegionsg= graph.adjacency(olAcqRegions, weighted=T)#
-#
-#Degree#
-V(olAcqRegionsg)$degree= degree(olAcqRegionsg)#
-#
-#Betweenness centrality#
-V(olAcqRegionsg)$btwcnt= betweenness(olAcqRegionsg)#
-#
-#distribution of connection strength#
-plot(density(olAcqRegions), main="Distribution of Connection Strength")
-olAcqRegions1g = graph.adjacency(olAcqRegions1, weighted=T)#
-#
-#remove loops#
-olAcqRegions1g<- simplify(olAcqRegions1g, remove.multiple=FALSE, remove.loops=TRUE)#
-#
-#hand placing nodes to make sure no labels overlap#
-olAcqRegions1g$layout <- layout.fruchterman.reingold(olAcqRegions1g)#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-tkplot(olAcqRegions1g)
-olAcqRegions1 = olAcqRegions#
-#olInvestors1[olInvestors<0.5] = 0#
-olAcqRegions1g = graph.adjacency(olAcqRegions1, weighted=T)#
-#
-#remove loops#
-olAcqRegions1g<- simplify(olAcqRegions1g, remove.multiple=FALSE, remove.loops=TRUE)#
-#
-#hand placing nodes to make sure no labels overlap#
-olAcqRegions1g$layout <- layout.fruchterman.reingold(olAcqRegions1g)#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-tkplot(olAcqRegions1g)
-olAcqRegions1g$layout <- tkplot.getcoords(2)#
-#
-# Set vertex attributes#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-V(olAcqRegions1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)#
-V(olAcqRegions1g)$size <- 6#
-V(olAcqRegions1g)$frame.color <- NA#
-V(olAcqRegions1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olAcqRegions1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olAcqRegions1g)$weight+.1)/max(E(olAcqRegions1g)$weight+.1)#
-E(olAcqRegions1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olAcqRegions1g)$label.cex <- V(olAcqRegions1g)$degree/(max(V(olAcqRegions1g)$degree)/2) +0.1#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olAcqRegions1gcustomlayout.pdf")#
-plot(olAcqRegions1g)#
-dev.off()
-spare matrix #
-A= spMatrix(nrow=length(unique(acq_comRegion_top1000$acqRegion)),#
-	ncol=length(unique(acq_comRegion_top1000$comRegion)),#
-	i=as.numeric(factor(acq_comRegion_top1000$acqRegion)),#
-	j=as.numeric(factor(acq_comRegion_top1000$comRegion)),#
-	x=rep(1, length(as.numeric(acq_comRegion_top1000$acqRegion)))  )#
-#
-row.names(A)= levels(factor(acq_comRegion_top1000$acqRegion))#
-colnames(A)= levels(factor(acq_comRegion_top1000$comRegion))#
-#row.names(A)= paste(row.names(A), "_acq", sep="")#
-#
-Arow= tcrossprod(A) #adjacency matrix for acquirer regions#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for company regions #
-#
-#overlap graph for acquire regions#
-olAcqRegions= Arow/diag(Arow)#
-olAcqRegions=as.matrix(olAcqRegions)#
-olAcqRegionsg= graph.adjacency(olAcqRegions, weighted=T)#
-#
-#Degree#
-V(olAcqRegionsg)$degree= degree(olAcqRegionsg)#
-#
-#Betweenness centrality#
-V(olAcqRegionsg)$btwcnt= betweenness(olAcqRegionsg)#
-#
-#distribution of connection strength#
-plot(density(olAcqRegions), main="Distribution of Connection Strength")#
-#
-#filter at 1 so that an edge will consists of investor overlap of more than 1 of the investor’s companies in question#
-olAcqRegions1 = olAcqRegions#
-#olInvestors1[olInvestors<0.5] = 0#
-olAcqRegions1g = graph.adjacency(olAcqRegions1, weighted=T)#
-#
-#remove loops#
-olAcqRegions1g<- simplify(olAcqRegions1g, remove.multiple=FALSE, remove.loops=TRUE)#
-#
-#hand placing nodes to make sure no labels overlap#
-olAcqRegions1g$layout <- layout.fruchterman.reingold(olAcqRegions1g)#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-tkplot(olAcqRegions1g)
-olAcqRegions1g$layout <- tkplot.getcoords(3)#
-#
-# Set vertex attributes#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-V(olAcqRegions1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)#
-V(olAcqRegions1g)$size <- 6#
-V(olAcqRegions1g)$frame.color <- NA#
-V(olAcqRegions1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olAcqRegions1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olAcqRegions1g)$weight+.1)/max(E(olAcqRegions1g)$weight+.1)#
-E(olAcqRegions1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olAcqRegions1g)$label.cex <- V(olAcqRegions1g)$degree/(max(V(olAcqRegions1g)$degree)/2) + 0.5#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olAcqRegions1gcustomlayout.pdf")#
-plot(olAcqRegions1g)#
-dev.off()
-olAcqRegions1g$layout <- tkplot.getcoords(3)#
-#
-# Set vertex attributes#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-V(olAcqRegions1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)#
-V(olAcqRegions1g)$size <- 6#
-V(olAcqRegions1g)$frame.color <- NA#
-V(olAcqRegions1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olAcqRegions1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olAcqRegions1g)$weight+.1)/max(E(olAcqRegions1g)$weight+.1)#
-E(olAcqRegions1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olAcqRegions1g)$label.cex <- V(olAcqRegions1g)$degree#/(max(V(olAcqRegions1g)$degree)/2) + 0.5#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olAcqRegions1gcustomlayout.pdf")#
-plot(olAcqRegions1g)#
-dev.off()
-V(olAcqRegions1g)$degree
-degree(olAcqRegions1g)
-V(olAcqRegions1g)$degree/(max(V(olAcqRegions1g)$degree)/2) + 0.5
-degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))/2) + 0.5
-olAcqRegions1g$layout <- tkplot.getcoords(3)#
-#
-# Set vertex attributes#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-V(olAcqRegions1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)#
-V(olAcqRegions1g)$size <- 6#
-V(olAcqRegions1g)$frame.color <- NA#
-V(olAcqRegions1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olAcqRegions1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olAcqRegions1g)$weight+.1)/max(E(olAcqRegions1g)$weight+.1)#
-E(olAcqRegions1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olAcqRegions1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))/2) + 0.5#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olAcqRegions1gcustomlayout.pdf")#
-plot(olAcqRegions1g)#
-dev.off()
-olAcqRegions1g$layout <- tkplot.getcoords(3)#
-#
-# Set vertex attributes#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-V(olAcqRegions1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)#
-V(olAcqRegions1g)$size <- 6#
-V(olAcqRegions1g)$frame.color <- NA#
-V(olAcqRegions1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olAcqRegions1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olAcqRegions1g)$weight+.1)/max(E(olAcqRegions1g)$weight+.1)#
-E(olAcqRegions1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olAcqRegions1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))/2) + 0.3#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olAcqRegions1gcustomlayout.pdf")#
-plot(olAcqRegions1g)#
-dev.off()
-olAcqRegions1g$layout <- tkplot.getcoords(3)#
-#
-# Set vertex attributes#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-V(olAcqRegions1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)#
-V(olAcqRegions1g)$size <- 6#
-V(olAcqRegions1g)$frame.color <- NA#
-V(olAcqRegions1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olAcqRegions1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olAcqRegions1g)$weight+.1)/max(E(olAcqRegions1g)$weight+.1)#
-E(olAcqRegions1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olAcqRegions1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))/2) + 0.1#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olAcqRegions1gcustomlayout.pdf")#
-plot(olAcqRegions1g)#
-dev.off()
-save layout#
-olAcqRegions1g$layout <- tkplot.getcoords(3)#
-#
-# Set vertex attributes#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-V(olAcqRegions1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)#
-V(olAcqRegions1g)$size <- 6#
-V(olAcqRegions1g)$frame.color <- NA#
-V(olAcqRegions1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olAcqRegions1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olAcqRegions1g)$weight+.1)/max(E(olAcqRegions1g)$weight+.1)#
-E(olAcqRegions1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olAcqRegions1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))) + 0.1#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olAcqRegions1gcustomlayout.pdf")#
-plot(olAcqRegions1g)#
-dev.off()
-Set vertex attributes#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-V(olAcqRegions1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)#
-V(olAcqRegions1g)$size <- 6#
-V(olAcqRegions1g)$frame.color <- NA#
-V(olAcqRegions1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olAcqRegions1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olAcqRegions1g)$weight+.1)/max(E(olAcqRegions1g)$weight+.1)#
-E(olAcqRegions1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olAcqRegions1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))) + 0.5#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olAcqRegions1gcustomlayout.pdf")#
-plot(olAcqRegions1g)#
-dev.off()
-company_names_top1000=read.csv("company_names_top1000.csv", header=TRUE)#
-company_names_top110=company_names_top1000$name[1:13]#
-investor_companytop110=subset(investor_company, company %in% company_names_top110)#
-print(dim(investor_companytop110))
-length(unqiue(investor_companytop110$investor_name))
-length(unique(investor_companytop110$investor_name))
-length(unique(investor_companytop110$investor))
-incidence matrix#
-A= spMatrix(nrow=length(unique(investor_companytop110$investor)),#
-	ncol=length(unique(investor_companytop110$company)),#
-	i=as.numeric(factor(investor_companytop110$investor)),#
-	j=as.numeric(factor(investor_companytop110$company)),#
-	x=rep(1, length(as.numeric(investor_companytop110$investor)))  )#
-#
-row.names(A)= levels(factor(investor_companytop110$investor))#
-colnames(A)= levels(factor(investor_companytop110$company))
-print(head(A))#
-Arow= tcrossprod(A) #adjacency matrix for investors#
-print(head(Arow))
-olInvestors= Arow/diag(Arow)#
-olInvestors=as.matrix(olInvestors)#
-olInvestorsg= graph.adjacency(olInvestors, weighted=T)#
-#
-#Degree#
-V(olInvestorsg)$degree= degree(olInvestorsg)#
-#
-#Betweenness centrality#
-V(olInvestorsg)$btwcnt= betweenness(olInvestorsg)#
-#
-#distribution of connection strength#
-plot(density(olInvestors), main="Distribution of Connection Strength")#
-#
-#filter at 1 so that an edge will consists of investor overlap of more than 1 of the investor’s companies in question#
-olInvestors1 = olInvestors#
-#olInvestors1[olInvestors<0.5] = 0#
-olInvestor1g = graph.adjacency(olInvestors1, weighted=T)#
-#
-#remove loops#
-olInvestor1g<- simplify(olInvestor1g, remove.multiple=FALSE, remove.loops=TRUE)#
-#
-#hand placing nodes to make sure no labels overlap#
-olInvestor1g$layout <- layout.fruchterman.reingold(olInvestor1g)#
-V(olInvestor1g)$label <- V(olInvestor1g)$name#
-tkplot(olInvestor1g)
-random_ind=sample(1000,5)#
-company_names_top110=company_names_top1000$name[random_ind]#
-investor_companytop110=subset(invest
-)
-random_ind=sample(1000,5)#
-company_names_top110=company_names_top1000$name[random_ind]#
-investor_companytop110=subset(investor_company, company %in% company_names_top110)#
-print(dim(investor_companytop110))
-length(unique(investor_companytop110$investor))
-A= spMatrix(nrow=length(unique(investor_companytop110$investor)),#
-	ncol=length(unique(investor_companytop110$company)),#
-	i=as.numeric(factor(investor_companytop110$investor)),#
-	j=as.numeric(factor(investor_companytop110$company)),#
-	x=rep(1, length(as.numeric(investor_companytop110$investor)))  )#
-#
-row.names(A)= levels(factor(investor_companytop110$investor))#
-colnames(A)= levels(factor(investor_companytop110$company))
-print(head(A))#
-Arow= tcrossprod(A) #adjacency matrix for investors#
-print(head(Arow))
-olInvestors= Arow/diag(Arow)#
-olInvestors=as.matrix(olInvestors)#
-olInvestorsg= graph.adjacency(olInvestors, weighted=T)#
-#
-#Degree#
-V(olInvestorsg)$degree= degree(olInvestorsg)#
-#
-#Betweenness centrality#
-V(olInvestorsg)$btwcnt= betweenness(olInvestorsg)#
-#
-#distribution of connection strength#
-plot(density(olInvestors), main="Distribution of Connection Strength")
-olInvestors1 = olInvestors#
-#olInvestors1[olInvestors<0.5] = 0#
-olInvestor1g = graph.adjacency(olInvestors1, weighted=T)#
-#
-#remove loops#
-olInvestor1g<- simplify(olInvestor1g, remove.multiple=FALSE, remove.loops=TRUE)#
-#
-#hand placing nodes to make sure no labels overlap#
-olInvestor1g$layout <- layout.fruchterman.reingold(olInvestor1g)#
-V(olInvestor1g)$label <- V(olInvestor1g)$name#
-tkplot(olInvestor1g)
-save layout#
-olInvestor1g$layout <- tkplot.getcoords(5)#
-#
-# Set vertex attributes#
-V(olInvestor1g)$label <- V(olInvestor1g)$name#
-V(olInvestor1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)#
-V(olInvestor1g)$size <- 6#
-V(olInvestor1g)$frame.color <- NA#
-V(olInvestor1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olInvestor1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olInvestor1g)$weight+.1)/max(E(olInvestor1g)$weight+.1)#
-E(olInvestor1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olInvestor1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))) + 0.5#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olInvestor1gcustomlayout.pdf")#
-plot(olInvestor1g)#
-dev.off()
-random_ind=sample(1000,5)
-random_ind
-company_names_top110=company_names_top1000$name[random_ind]#
-investor_companytop110=subset(investor_company, company %in% company_names_top110)#
-print(dim(investor_companytop110))#
-#
-#Using this dataframe #
-investor_companytop110$investor= as.character(as.vector(investor_companytop110$investor))#
-investor_companytop110$company= as.character(as.vector(investor_companytop110$company))#
-#two mode incidence matrix to one mode adjacency matrix conversion#
-#
-#incidence matrix#
-A= spMatrix(nrow=length(unique(investor_companytop110$investor)),#
-	ncol=length(unique(investor_companytop110$company)),#
-	i=as.numeric(factor(investor_companytop110$investor)),#
-	j=as.numeric(factor(investor_companytop110$company)),#
-	x=rep(1, length(as.numeric(investor_companytop110$investor)))  )#
-#
-row.names(A)= levels(factor(investor_companytop110$investor))#
-colnames(A)= levels(factor(investor_companytop110$company))
-Arow= tcrossprod(A) #adjacency matrix for investors
-olInvestors= Arow/diag(Arow)#
-olInvestors=as.matrix(olInvestors)#
-olInvestorsg= graph.adjacency(olInvestors, weighted=T)#
-#
-#Degree#
-V(olInvestorsg)$degree= degree(olInvestorsg)#
-#
-#Betweenness centrality#
-V(olInvestorsg)$btwcnt= betweenness(olInvestorsg)#
-#
-#distribution of connection strength#
-plot(density(olInvestors), main="Distribution of Connection Strength")#
-#
-#filter at 1 so that an edge will consists of investor overlap of more than 1 of the investor’s companies in question#
-olInvestors1 = olInvestors#
-#olInvestors1[olInvestors<0.5] = 0#
-olInvestor1g = graph.adjacency(olInvestors1, weighted=T)#
-#
-#remove loops#
-olInvestor1g<- simplify(olInvestor1g, remove.multiple=FALSE, remove.loops=TRUE)#
-#
-#hand placing nodes to make sure no labels overlap#
-olInvestor1g$layout <- layout.fruchterman.reingold(olInvestor1g)#
-V(olInvestor1g)$label <- V(olInvestor1g)$name#
-tkplot(olInvestor1g)
-olInvestor1g$layout <- tkplot.getcoords(6)#
-#
-# Set vertex attributes#
-V(olInvestor1g)$label <- V(olInvestor1g)$name#
-V(olInvestor1g)$label.color <- rgb(250/256,128/256,114/256, 0.5)#
-V(olInvestor1g)$size <- 6#
-V(olInvestor1g)$frame.color <- NA#
-V(olInvestor1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olInvestor1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olInvestor1g)$weight+.1)/max(E(olInvestor1g)$weight+.1)#
-E(olInvestor1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olInvestor1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))) + 0.5#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olInvestor1gcustomlayout.pdf")#
-plot(olInvestor1g, main="Overlap Network of Investors")#
-dev.off()
-Set vertex attributes#
-V(olInvestor1g)$label <- V(olInvestor1g)$name#
-V(olInvestor1g)$label.color <- rgb(250/256,128/256,114/256, 0.8)#
-V(olInvestor1g)$size <- 6#
-V(olInvestor1g)$frame.color <- NA#
-V(olInvestor1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olInvestor1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olInvestor1g)$weight+.1)/max(E(olInvestor1g)$weight+.1)#
-E(olInvestor1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olInvestor1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))) + 0.5#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olInvestor1gcustomlayout.pdf")#
-plot(olInvestor1g, main="Overlap Network of Investors")#
-dev.off()
-A= spMatrix(nrow=length(unique(acq_comRegion_top1000$acqRegion)),#
-	ncol=length(unique(acq_comRegion_top1000$comRegion)),#
-	i=as.numeric(factor(acq_comRegion_top1000$acqRegion)),#
-	j=as.numeric(factor(acq_comRegion_top1000$comRegion)),#
-	x=rep(1, length(as.numeric(acq_comRegion_top1000$acqRegion)))  )#
-#
-row.names(A)= levels(factor(acq_comRegion_top1000$acqRegion))#
-colnames(A)= levels(factor(acq_comRegion_top1000$comRegion))#
-#row.names(A)= paste(row.names(A), "_acq", sep="")#
-#
-Arow= tcrossprod(A) #adjacency matrix for acquirer regions#
-#
-Acol=tcrossprod(t(A)) #adjacency matrix for company regions #
-#
-#overlap graph for acquire regions#
-olAcqRegions= Arow/diag(Arow)#
-olAcqRegions=as.matrix(olAcqRegions)#
-olAcqRegionsg= graph.adjacency(olAcqRegions, weighted=T)#
-#
-#Degree#
-V(olAcqRegionsg)$degree= degree(olAcqRegionsg)#
-#
-#Betweenness centrality#
-V(olAcqRegionsg)$btwcnt= betweenness(olAcqRegionsg)#
-#
-#distribution of connection strength#
-plot(density(olAcqRegions), main="Distribution of Connection Strength")#
-#
-#filter at 1 so that an edge will consists of investor overlap of more than 1 of the investor’s companies in question#
-olAcqRegions1 = olAcqRegions#
-#olInvestors1[olInvestors<0.5] = 0#
-olAcqRegions1g = graph.adjacency(olAcqRegions1, weighted=T)#
-#
-#remove loops#
-olAcqRegions1g<- simplify(olAcqRegions1g, remove.multiple=FALSE, remove.loops=TRUE)#
-#
-#hand placing nodes to make sure no labels overlap#
-olAcqRegions1g$layout <- layout.fruchterman.reingold(olAcqRegions1g)#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-tkplot(olAcqRegions1g)
-olAcqRegions1g$layout <- tkplot.getcoords(7)#
-#
-# Set vertex attributes#
-V(olAcqRegions1g)$label <- V(olAcqRegions1g)$name#
-V(olAcqRegions1g)$label.color <- rgb(250/256,128/256,114/256, 0.8)#
-V(olAcqRegions1g)$size <- 6#
-V(olAcqRegions1g)$frame.color <- NA#
-V(olAcqRegions1g)$color <- rgb(95/256,158/256,160/256,.5)#
-# Set edge attributes#
-E(olAcqRegions1g)$arrow.size <- .3#
-# Set edge gamma according to edge weight#
-egam <- (E(olAcqRegions1g)$weight+.1)/max(E(olAcqRegions1g)$weight+.1)#
-E(olAcqRegions1g)$color <- rgb(0.5,0.5,0,egam)#
-#
-V(olAcqRegions1g)$label.cex <- degree(olAcqRegions1g)/(max(degree(olAcqRegions1g))) + 0.5#
-#note, unfortunately one must play with the formula above to get the#
-#ratio just right#
-#
-pdf("olAcqRegions1gcustomlayout.pdf")#
-plot(olAcqRegions1g, main="Overlap Network for Acquirer Regions")#
-dev.off()
-iAC= graph.incidence(A, mode=c("all"))
-V(iAC)
-length(sort(unique(acq_comRegion_top1000$acqRegion)))
-length(sort(unique(acq_comRegion_top1000$comRegion)))
-V(iAC)$color[1:40] <- rgb(1,0,0,.5) # acquirer region#
-V(iAC)$color[41:75] <- rgb(0,1,0,.5) #company region#
-#
-V(iAC)$label <- V(iAC)$name#
-V(iAC)$label.color <- rgb(0,0,.2,.5)#
-V(iAC)$label.cex <- .4#
-V(iAC)$size <- 6#
-V(iAC)$frame.color <- NA#
-#
-E(iAC)$color <- rgb(.5,.5,0,.2)#
-#
-pdf("iACRegions.pdf")#
-plot(iAC, main="Two-mode incidence graph", layout=layout.fruchterman.reingold)#
-dev.off()
-Aacquirer= graph.adjacency(Arow, mode= "undirected") #
-#
-#we need to transform the graph so that multiply edges become an attribute#
-E(Aacquirer)$weight = count.multiple(Aacquirer)#
-Aacquirer = simplify(Aacquirer)#
-#
-#setting plotting parameters#
-# Set vertex attributes#
-V(Aacquirer)$label = V(Aacquirer)$name#
-V(Aacquirer)$label.color = rgb(0,0,.2,.8)#
-V(Aacquirer)$label.cex = .6#
-V(Aacquirer)$size = 6#
-V(Aacquirer)$frame.color = NA#
-V(Aacquirer)$color = rgb(0,0,1,.5)#
-# Set edge gamma according to edge weight#
-egam <- (log(E(Aacquirer)$weight)+.3)/max(log(E(Aacquirer)$weight)+.3)#
-E(Aacquirer)$color <- rgb(.5,.5,0,egam)#
-#
-pdf("Aacquirer_top1000companies.pdf")#
-plot(Aacquirer, main = "Adjacency Graph of Acquirer Regions", layout=layout.kamada.kawai)#
-plot(Aacquirer, main = "Adjacency Graph of Acquirer Regions", layout=layout.fruchterman.reingold)#
-dev.off()
-pdf("AacquirerRegions_top1000companies.pdf")#
-plot(Aacquirer, main = "Adjacency Graph of Acquirer Regions", layout=layout.kamada.kawai)#
-dev.off()
-Acompanies= graph.adjacency(Acol, mode= "undirected") #
-#
-#we need to transform the graph so that multiply edges become an attribute#
-E(Acompanies)$weight = count.multiple(Acompanies)#
-Acompanies = simplify(Acompanies)#
-#
-#setting plotting parameters#
-# Set vertex attributes#
-V(Acompanies)$label = V(Acompanies)$name#
-V(Acompanies)$label.color = rgb(0,0,.2,.8)#
-V(Acompanies)$label.cex = .6#
-V(Acompanies)$size = 6#
-V(Acompanies)$frame.color = NA#
-V(Acompanies)$color = rgb(0,0,1,.5)#
-# Set edge gamma according to edge weight#
-egam <- (log(E(Acompanies)$weight)+.3)/max(log(E(Acompanies)$weight)+.3)#
-E(Acompanies)$color <- rgb(.5,.5,0,egam)#
-#
-pdf("AacqcompanyRegions_top1000companies.pdf")#
-plot(Acompanies, main = "Adjacency Graph of Acquired Company Regions", layout=layout.kamada.kawai)#
-plot(Acompanies, main = "Adjacency Graph of Acquired Company Regions", layout=layout.fruchterman.reingold)#
-dev.off()
-pdf("AacqcompanyRegions_top1000companies.pdf")#
-plot(Acompanies, main = "Adjacency Graph of Acquired Company Regions", layout=layout.kamada.kawai)#
-dev.off()
+features = read.csv("features.csv")
+head(features)
+max(features$raised_amount_usd.y)
+3.2e+09
+which.max(features$raised_amount_usd.y)
+features[46369,]
+all_companies = read.csv("all_companies.csv")
+head)all_companies
+head(all_companies)
+max(all_companies$raised_amount_usd.y)
+which.max(all_companies$raised_amount_usd.y)
+all_companies[46369,]
+max(all_companies$funding_total_usd)
+all_companies$funding_total_usd = gsub(",","",all_companies$funding_total_usd)#
+all_companies$funding_total_usd = as.numeric(all_companies$funding_total_usd)
+max(all_companies$funding_total_usd)
+which.max(all_companies$funding_total_usd)
+all_comapnies[222771,]
+all_companies[222771,]

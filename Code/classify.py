@@ -49,7 +49,8 @@ class classify:
 		knn.fit(self.descr, self.target)
 		pred = knn.predict(self.test_descr)
 
-		pd.df.write_csv("pred_val.csv")
+		pred_df = pd.DataFrame(pred)
+		pred_df.to_csv("pred_val.csv")
 
 		accuracy = np.where(pred == self.test_target, 1, 0).sum() / float(len(self.test_target))
 		print "Accuracy: %3f" %  accuracy
@@ -80,6 +81,11 @@ class classify:
 		clf = DecisionTreeClassifier()
 		clf.fit(self.descr, self.target)
 		mean = clf.score(self.test_descr, self.test_target)
+
+		pred = clf.predict(self.test_descr)
+
+		pred_df = pd.DataFrame(pred)
+		pred_df.to_csv("pred_val_rf.csv")		
 		print "Accuracy : %3f" % mean
 
 		# Ten-fold cross validation
@@ -149,6 +155,9 @@ class classify:
 		mean = clf.score(self.test_descr, self.test_target)
 		pred = clf.predict(self.test_descr)
 
+		pred_df = pd.DataFrame(pred)
+		pred_df.to_csv("pred_val_rf.csv")
+
 		print "Pred ", pred
 		print "Mean : %3f" % mean
 		print "Feature Importances ", clf.feature_importances_
@@ -158,11 +167,11 @@ class classify:
 
 
 cl = classify()
-cl.read_target('trainClass.csv', "train")
-cl.read_descr('trainDescr.csv', "train")
-cl.read_target('testClass.csv', "test")
-cl.read_descr('testDescr.csv', "test")
-cl.knn_classify()
+cl.read_target('/Users/raghav297/dropbox/Documents/UCLA/UCLA_Spring_14/CS249/Crunchbase_Data/trainClass.csv', "train")
+cl.read_descr('/Users/raghav297/dropbox/Documents/UCLA/UCLA_Spring_14/CS249/Crunchbase_Data/trainDescr.csv', "train")
+cl.read_target('/Users/raghav297/dropbox/Documents/UCLA/UCLA_Spring_14/CS249/Crunchbase_Data/testClass.csv', "test")
+cl.read_descr('/Users/raghav297/dropbox/Documents/UCLA/UCLA_Spring_14/CS249/Crunchbase_Data/testDescr.csv', "test")
+#cl.knn_classify()
 #cl.knn_plot()
 #cl.svm_classify()
 #cl.tree_classify()
@@ -199,7 +208,7 @@ def et_classify(self):
 	print "Feature Importances ", clf.feature_importances_
 
 def gb_classify(self):
-	print "Gradient Boostin"
+	print "Gradient Boosting"
 	clf = GradientBoostingClassifier()
 	clf.fit(self.descr, self.target)
 	mean = clf.score(self.test_descr, self.test_target)
