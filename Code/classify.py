@@ -8,7 +8,7 @@ from sklearn.externals.six import StringIO
 from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import SGDClassifier
 from sklearn.ensemble import RandomForestClassifier
-import pydot 
+#import pydot 
 import pandas as pd
 import numpy as np 
 import pylab as pl
@@ -45,15 +45,16 @@ class classify:
 
 
 	def knn_classify(self):
-		for n in range(1, 30, 2):
-			knn = KNeighborsClassifier(n_neighbors=n)
-			knn.fit(self.descr, self.target)
-			pred = knn.predict(self.test_descr)
+		knn = KNeighborsClassifier()
+		knn.fit(self.descr, self.target)
+		pred = knn.predict(self.test_descr)
 
-			accuracy = np.where(pred == self.test_target, 1, 0).sum() / float(len(self.test_target))
-			print "Neighbors: %d, Accuracy: %3f" % (n, accuracy)
+		pd.df.write_csv("pred_val.csv")
 
-			self.results.append([n, accuracy])
+		accuracy = np.where(pred == self.test_target, 1, 0).sum() / float(len(self.test_target))
+		print "Accuracy: %3f" %  accuracy
+
+		#self.results.append([n, accuracy])
 
 	def knn_plot(self):
 		self.results = pd.DataFrame(self.results, columns=["n", "accuracy"])
@@ -90,8 +91,8 @@ class classify:
 		print "Feature Importances", clf.feature_importances_
 		#print "Parameters", clf.get_params()
 
-		with open("tree.dot", 'w') as f:
-			f = tree.export_graphviz(clf, out_file=f)
+		#with open("tree.dot", 'w') as f:
+		#	f = tree.export_graphviz(clf, out_file=f)
 
 		#os.unlink('tree.dot')
 
@@ -119,11 +120,11 @@ class classify:
 		accuracy = np.where(pred == self.test_target, 1, 0).sum() / float(len(self.test_target))
 		print "Accuracy: %3f" % accuracy
 
-		#print "Mean : %3f" % mean
-		#print "Probability ", clf.class_prior_
-		#print "Mean of each feature per class ", clf.theta_
-		#print "Variance of each feature per class ", clf.sigma_
-		#print "Predict Probability ", clf.predict_proba(self.descr)
+		print "Mean : %3f" % mean
+		print "Probability ", clf.class_prior_
+		print "Mean of each feature per class ", clf.theta_
+		print "Variance of each feature per class ", clf.sigma_
+		print "Predict Probability ", clf.predict_proba(self.descr)
 
 	def sgd_classify(self):
 		print "Stochastic Gradient Descent"
@@ -146,7 +147,9 @@ class classify:
 		clf = RandomForestClassifier()
 		clf.fit(self.descr, self.target)
 		mean = clf.score(self.test_descr, self.test_target)
+		pred = clf.predict(self.test_descr)
 
+		print "Pred ", pred
 		print "Mean : %3f" % mean
 		print "Feature Importances ", clf.feature_importances_
 		print "Predict Probability ", clf.predict_proba(self.descr)
@@ -155,15 +158,60 @@ class classify:
 
 
 cl = classify()
-cl.read_target('/Users/raghav297/dropbox/Documents/UCLA/UCLA_Spring_14/CS249/Crunchbase_Data/trainClass.csv', "train")
-cl.read_descr('/Users/raghav297/dropbox/Documents/UCLA/UCLA_Spring_14/CS249/Crunchbase_Data/trainDescr.csv', "train")
-cl.read_target('/Users/raghav297/dropbox/Documents/UCLA/UCLA_Spring_14/CS249/Crunchbase_Data/testClass.csv', "test")
-cl.read_descr('/Users/raghav297/dropbox/Documents/UCLA/UCLA_Spring_14/CS249/Crunchbase_Data/testDescr.csv', "test")
-#cl.knn_classify()
+cl.read_target('trainClass.csv', "train")
+cl.read_descr('trainDescr.csv', "train")
+cl.read_target('testClass.csv', "test")
+cl.read_descr('testDescr.csv', "test")
+cl.knn_classify()
 #cl.knn_plot()
 #cl.svm_classify()
 #cl.tree_classify()
 #cl.lr_classify()
 #cl.nb_classify()
 #cl.sgd_classify()
-cl.rf_classify()
+#cl.rf_classify()
+
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import ExtraTreesClassifier
+import types
+
+def ab_classify(self):
+	print "Adaboost"
+	clf = AdaBoostClassifier()
+	clf.fit(self.descr, self.target)
+	mean = clf.score(self.test_descr, self.test_target)
+	pred = clf.predict(self.test_descr)
+
+	print "Pred ", pred
+	print "Mean : %3f" % mean
+	print "Feature Importances ", clf.feature_importances_
+
+def et_classify(self):
+	print "Extra Trees"
+	clf = ExtraTreesClassifier()
+	clf.fit(self.descr, self.target)
+	mean = clf.score(self.test_descr, self.test_target)
+	pred = clf.predict(self.test_descr)
+
+	print "Pred ", pred
+	print "Mean : %3f" % mean
+	print "Feature Importances ", clf.feature_importances_
+
+def gb_classify(self):
+	print "Gradient Boostin"
+	clf = GradientBoostingClassifier()
+	clf.fit(self.descr, self.target)
+	mean = clf.score(self.test_descr, self.test_target)
+	pred = clf.predict(self.test_descr)
+
+	print "Pred ", pred
+	print "Mean : %3f" % mean
+	print "Feature Importances ", clf.feature_importances_
+
+cl.ab_classify = types.MethodType( ab_classify, cl )
+cl.gb_classify = types.MethodType( gb_classify, cl )
+cl.et_classify = types.MethodType( et_classify, cl )
+#cl.ab_classify()
+#cl.gb_classify()
+#cl.et_classify()
