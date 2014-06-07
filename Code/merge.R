@@ -52,8 +52,8 @@ colnames(features)
 #[11] "labelNum"  
 #features$funded_year.y = as.character(features$funded_year.y)
 
-#features = read.csv("features.csv")
-#features = features[c(2:4, 6:11,13,14)]
+features = read.csv("features.csv")
+features = features[c(2:4, 6:11,13,14)]
 
 # Converts qualitative to quantitative
 new_features = model.matrix(~., data=features)
