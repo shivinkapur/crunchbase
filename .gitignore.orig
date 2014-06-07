@@ -1,0 +1,9 @@
+Code/Data/*.csv
+Code/Data/all_data.csv
+Data/*.csv
+<<<<<<< HEAD
+Code/tree.dot
+Code/tree.pdf
+=======
+*.csv
+>>>>>>> 327c1a7cbc32a24e376aa054b67bb0bc1746e49d

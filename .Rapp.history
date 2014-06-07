@@ -1,0 +1,1198 @@
+library ("igraph")#
+#
+p <- 0.1 #
+# create random graph#
+g <- random.graph.game(1000, p, directed=F);#
+#
+is.connected(g)#
+#
+#get degree distribution#
+#
+degreesVector <- degree(g)#
+g <- random.graph.game(nodesNum , p , directed = FALSE)#
+dg2 <- degree(g)#
+degreesVector <- c(degreesVector, dg2)#
+#
+h <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))#
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+install.packages("igraph")
+library ("igraph")#
+#
+p <- 0.1 #
+# create random graph#
+g <- random.graph.game(1000, p, directed=F);#
+#
+is.connected(g)#
+#
+#get degree distribution#
+#
+degreesVector <- degree(g)#
+g <- random.graph.game(nodesNum , p , directed = FALSE)#
+dg2 <- degree(g)#
+degreesVector <- c(degreesVector, dg2)#
+#
+h <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))#
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+library ("igraph")#
+#
+p1 <- 0.1
+g1 <- random.graph.game(1000, p1, directed=F)#
+d1 <- degree.distribution(g1)
+plot(g1)
+plot(d1)
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.5#
+p3 <- 0.01#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+d1 <- degree.distribution(g1)#
+plot(d1)#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+d2 <- degree.distribution(g2)#
+plot(d1)#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+d3 <- degree.distribution(g3)#
+plot(d1)#
+#
+is.connected(g1)#
+is.connected(g2)#
+is.connected(g3)
+g1 <- random.graph.game(1000, p1, directed=F)#
+d1 <- degree.distribution(g1)#
+hist(d1)#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+d2 <- degree.distribution(g2)#
+hist(d2)#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+d3 <- degree.distribution(g3)#
+hist(d3)
+g1 <- random.graph.game(1000, p1, directed=F)#
+> d1 <- degree.distribution(g1)#
+> hist(d1)
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.5#
+p3 <- 0.01#
+#
+par(mfrow=c(2,2))#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+d1 <- degree.distribution(g1)#
+hist(d1)#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+d2 <- degree.distribution(g2)#
+hist(d2)#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+d3 <- degree.distribution(g3)#
+hist(d3)
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+g <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g)#
+g <- random.graph.game(1000 , p , directed = FALSE)#
+dg2 <- degree(g)#
+degreesVector <- c(degreesVector, dg2)#
+h <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+p <- .1
+g <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g)#
+g <- random.graph.game(1000 , p , directed = FALSE)#
+dg2 <- degree(g)#
+degreesVector <- c(degreesVector, dg2)#
+h <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.5#
+p3 <- 0.01#
+#
+par(mfrow=c(2,2))#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+degreesVector2 <- degree(g2)#
+h2 <- hist(degreesVector2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2 , type="o")#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+degreesVector3 <- degree(g3)#
+h3 <- hist(degreesVector3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl3 <- data.frame(x=h3$mids, y=h3$density)#
+plot(pl3 , type="o")#
+is.connected(g1)#
+is.connected(g2)#
+is.connected(g3)
+clear
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.5#
+p3 <- 0.01#
+#
+par(mfrow=c(3,2))#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+degreesVector2 <- degree(g2)#
+h2 <- hist(degreesVector2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2 , type="o")#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+degreesVector3 <- degree(g3)#
+h3 <- hist(degreesVector3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl3 <- data.frame(x=h3$mids, y=h3$density)#
+plot(pl3 , type="o")#
+is.connected(g1)#
+is.connected(g2)#
+is.connected(g3)
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.5#
+p3 <- 0.01#
+#
+par(mfrow=c(3,2))#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+degreesVector2 <- degree(g2)#
+h2 <- hist(degreesVector2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector2)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2 , type="o")#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+degreesVector3 <- degree(g3)#
+h3 <- hist(degreesVector3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl3 <- data.frame(x=h3$mids, y=h3$density)#
+plot(pl3 , type="o")
+clear()
+library ("igraph")#
+#
+p1 <- 0.1 #
+p2 <- 0.05#
+p3 <- 0.01#
+#
+par(mfrow=c(3,2))#
+#
+# create random graph#
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+degreesVector2 <- degree(g2)#
+h2 <- hist(degreesVector2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector2)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2 , type="o")#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+degreesVector3 <- degree(g3)#
+h3 <- hist(degreesVector3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl3 <- data.frame(x=h3$mids, y=h3$density)#
+plot(pl3 , type="o")#
+is.connected(g1)#
+is.connected(g2)#
+is.connected(g3)
+k = 1000#
+pc = 0#
+for(i in seq(0,1, by = 0.001)) {#
+	g_test <- random.graph.game(1000, i, directed=F)#
+	if(is.connected(g_test)) {#
+		pc = i#
+		break#
+	}#
+}#
+#
+print(pc)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+#
+par(mfrow=c(1,2))#
+#
+h_dd1 <- hist(dd1, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl_dd1 <- data.frame(x=h_dd1$mids, y=h_dd1$density)#
+plot(pl_dd1 , type="o")#
+h_dd2 <- hist(dd2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl_dd2 <- data.frame(x=h_dd2$mids, y=h_dd2$density)#
+plot(pl_dd2 , type="o")#
+#
+par(opar)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+#
+par(mfrow=c(2,2))#
+#
+h_dd1 <- hist(dd1, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl_dd1 <- data.frame(x=h_dd1$mids, y=h_dd1$density)#
+plot(pl_dd1 , type="o")#
+h_dd2 <- hist(dd2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl_dd2 <- data.frame(x=h_dd2$mids, y=h_dd2$density)#
+plot(pl_dd2 , type="o")#
+#
+par(opar)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+diameter(g)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+diameter(g)#
+#
+fg <- fastgreedy.community(g)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+mod <- modularity(g)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g)#
+#
+ug <- g #
+ug1 = as.undirected(ug, "collapse")#
+comm = fastgreedy.community(ug1)   #
+mem = community.to.membership(ug1, comm$merges, step=which.max(comm$modularity)-1)#
+barplot(table(v3$csize))#
+#
+dev.off()
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g)#
+#
+ug <- g #
+ug1 = as.undirected(ug, "collapse")#
+comm = fastgreedy.community(ug1)   #
+mem = community.to.membership(ug1, comm$merges, step=which.max(comm$modularity)-1)#
+barplot(table(mem$csize))
+modularity(comm)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+max(degree(g))#
+comm = fastgreedy.community(ug1)   #
+mem = community.to.membership(ug1, comm$merges, step=which.max(comm$modularity)-1)#
+barplot(table(mem$csize))#
+#
+modularity(comm)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+max(degree(g))#
+comm = fastgreedy.community(g)   #
+mem = community.to.membership(g, comm$merges, step=which.max(comm$modularity)-1)#
+barplot(table(mem$csize))#
+#
+modularity(comm)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+max(degree(g))#
+fgc <- fastgreedy.community(g)   #
+ctm <- community.to.membership(g, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+max(degree(g))#
+fgc = fastgreedy.community(g)   #
+ctm = community.to.membership(g, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+max(degree(g))#
+#
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g, directed = TRUE, unconnected = FALSE)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g)#
+#
+ebc <- edge.betweenness.community(g)#
+plot(ebc)#
+ebc_size <- sizes(ebc)#
+ebc_mem <- membership(ebc)
+plot.communities(ebc)
+plot.communities(ebc_mem)
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+is.connected(g)#
+clusters(g)#
+diameter(g)#
+#
+ebc <- edge.betweenness.community(g)#
+plot(ebc)#
+ebc_size <- sizes(ebc)#
+ebc_mem = community.to.membership(g, ebc_mem$merges, step=which.max(ebc_mem$modularity)-1)#
+barplot(table(ebc_mem$csize))
+typeof(ebc)
+ebc
+plot(membership(ebc))
+plot(sizes(ebc))
+plot(modularity(ebc))
+plot(ebc$modularity)
+ebc
+ebc$modularity
+ebc$membership
+ebc$sizes
+ebc$size
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")#
+#
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)
+ar(mfrow=c(2,2))#
+#
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")#
+#
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)#
+par(opar)
+par(mfrow=c(2,2))#
+#
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")#
+#
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fgc)
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+barplot(table(fgc$membership))
+par(mfrow=c(2,2))#
+#
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")#
+#
+g1 <- g #
+ung = as.undirected(g1, "collapse")#
+fgc = fastgreedy.community(ung)   #
+ctm = community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+barplot(table(fgc$membership))#
+#
+modularity(fgc)
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+gccIndex = which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+fg <- fastgreedy.community(gcc)#
+modularity(fg)
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+gccIndex_large = which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+modularity(fg_large)
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+gccIndex = which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(g, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+is.connected(fg)#
+modularity(fg)
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)
+par(mfrow=c(1,2))#
+#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+gccIndex <- which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(gcc, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+is.connected(fg)#
+modularity(fg)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g+large, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)
+par(mfrow=c(2,1))#
+#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+gccIndex <- which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(gcc, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+is.connected(fg)#
+modularity(fg)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g+large, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)
+k = 1000#
+pc_low = 0#
+pc_high = 1#
+nc = 1000#
+for(j in 1:nc) {#
+	for(i in seq(0,1, by = 0.001)) {#
+		g_test <- random.graph.game(1000, i, directed=F)#
+		if(is.connected(g_test)) {#
+			if(pc_low > i) {#
+				pc_low = i#
+			}#
+			if(pc_high < i) {#
+				pc_high = i#
+			}#
+			break#
+		}#
+	}#
+}#
+#
+print(pc_low)#
+print(pc_high)
+k = 1000#
+pc_low = 1#
+pc_high = 0#
+nc = 1000#
+for(j in 1:nc) {#
+	for(i in seq(0,1, by = 0.001)) {#
+		g_test <- random.graph.game(1000, i, directed=F)#
+		if(is.connected(g_test)) {#
+			if(pc_low > i) {#
+				pc_low = i#
+			}#
+			if(pc_high < i) {#
+				pc_high = i#
+			}#
+			break#
+		}#
+	}#
+}#
+#
+print(pc_low)#
+print(pc_high)
+par(mfrow=c(2,1))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+gccIndex <- which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(gcc, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+is.connected(fg)#
+modularity(fg)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g+large, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)
+fg_large
+fg_large$modularity
+par(mfrow=c(4,2))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+degreesVector <- degree(g)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+gccIndex <- which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+#### b)#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(gcc, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+is.connected(fg)#
+modularity(fg)#
+hist(fg$modularity, breaks = 50)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+#### c)#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+#
+degreesVector <- degree(g_large)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g_large, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)#
+hist(fgc_large$modularity, breaks = 50)
+par(mfrow=c(4,2))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+is.connected(g)#
+degreesVector <- degree(g)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+gccIndex <- which.max(cl$csize)#
+nonGccNodes <- (1:vcount(g))[cl$membership != gccIndex]#
+gcc <- delete.vertices(g, nonGccNodes)#
+#
+#### b)#
+fg <- fastgreedy.community(gcc)#
+ctm <- community.to.membership(gcc, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fg)#
+hist(fg$modularity, breaks = 50)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+#### c)#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+#
+degreesVector <- degree(g_large)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+gccIndex_large <- which.max(cl_large$csize)#
+nonGccNodes_large <- (1:vcount(g_large))[cl_large$membership != gccIndex_large]#
+gcc_large <- delete.vertices(g_large, nonGccNodes_large)#
+#
+fg_large <- fastgreedy.community(gcc_large)#
+ctm_large <- community.to.membership(gcc_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)#
+hist(fg_large$modularity, breaks = 50)
+p1 <- 0.1 #
+p2 <- 0.05#
+p3 <- 0.01#
+#
+par(mfrow=c(3,2))#
+#
+#### a)#
+g1 <- random.graph.game(1000, p1, directed=F)#
+degreesVector <- degree(g1)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+g2 <- random.graph.game(1000, p2, directed=F)#
+degreesVector2 <- degree(g2)#
+h2 <- hist(degreesVector2, breaks=seq(-0.5, by=1 , length.out=max(degreesVector2)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2 , type="o")#
+#
+g3 <- random.graph.game(1000, p3, directed=F)#
+degreesVector3 <- degree(g3)#
+h3 <- hist(degreesVector3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl3 <- data.frame(x=h3$mids, y=h3$density)#
+plot(pl3 , type="o")#
+#
+#### b)#
+is.connected(g1)#
+is.connected(g2)#
+is.connected(g3)#
+#
+diameter(g1)#
+diameter(g2)#
+diameter(g3)#
+#
+k = 1000#
+pc_low = 1#
+pc_high = 0#
+nc = 1000#
+for(j in 1:nc) {#
+	for(i in seq(0,1, by = 0.001)) {#
+		g_test <- random.graph.game(1000, i, directed=F)#
+		if(is.connected(g_test)) {#
+			if(pc_low > i) {#
+				pc_low = i#
+			}#
+			if(pc_high < i) {#
+				pc_high = i#
+			}#
+			break#
+		}#
+	}#
+}#
+#
+print(pc_low)#
+print(pc_high)
+par(mfrow=c(4,2))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+is.connected(g)#
+#
+degreesVector <- degree(g)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+#### b)#
+fg <- fastgreedy.community(g)#
+ctm <- community.to.membership(g, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fg)#
+hist(fg$modularity, breaks = 50)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+#### c)#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+#
+degreesVector <- degree(g_large)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+fg_large <- fastgreedy.community(g_large)#
+ctm_large <- community.to.membership(g_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)#
+hist(fg_large$modularity, breaks = 50)#
+#
+dev.off()
+par(mfrow=c(4,2))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+is.connected(g)#
+#
+degreesVector <- degree(g)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+#### b)#
+fg <- fastgreedy.community(g)#
+ctm <- community.to.membership(g, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fg)#
+hist(fg$modularity, breaks = 50)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+#### c)#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+#
+degreesVector <- degree(g_large)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+fg_large <- fastgreedy.community(g_large)#
+ctm_large <- community.to.membership(g_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)#
+hist(fg_large$modularity, breaks = 50)
+par(mfrow=c(2,2))#
+#
+#### a)#
+g <- aging.prefatt.game(1000, pa.exp=1, aging.exp=-3, aging.bin=1000)#
+degree_3 <- degree(g)#
+h <- hist(degree_3, breaks=seq(-0.5, by=1 , length.out=max(degreesVector3)+2))       #
+pl <- data.frame(x=h$mids, y=h$density)#
+plot(pl , type="o")#
+#
+g1 <- g #
+ung <- as.undirected(g1, "collapse")#
+fgc <- fastgreedy.community(ung)   #
+ctm <- community.to.membership(ung, fgc$merges, step=which.max(fgc$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+#### b)#
+modularity(fgc)#
+hist(fgc$modularity, breaks = 50)
+a)#
+g <- forest.fire.game(1000, fw.prob=0.37, bw.factor=0.32/0.37)#
+dd1 <- degree.distribution(g, mode="in")#
+dd2 <- degree.distribution(g, mode="out")#
+if (interactive()) {#
+  plot(seq(along=dd1)-1, dd1, log="xy")#
+  points(seq(along=dd2)-1, dd2, col=2, pch=2)#
+}#
+#
+#### b)#
+is.connected(g)#
+clusters(g)#
+diameter(g)#
+#
+#### c)#
+ebc <- edge.betweenness.community(g)#
+ebc_mem <- membership(ebc)#
+plot(ebc_mem)#
+ebc_mod <- modularity(ebc)
+hist(ebc$modularity, breaks = 50)
+g <- barabasi.game(1000, directed = FALSE)
+neighborhood.size(g, 1, nodes=i)
+neighborhood.size(g, 1, i)
+set.seed(100)#
+i = floor(runif(1)*1000)#
+neighborhood.size(g, 1, i)
+i
+degreeVector
+degreesVector
+set.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+j = floor(runif(1)*nbr_size)#
+#
+nbr <- data.frame(neighbourhood(g, 1, i))
+set.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+j = floor(runif(1)*nbr_size)#
+#
+nbr <- data.frame(neighborhood(g, 1, i))
+nbr
+nbr[2]
+nbr[2,]
+j = floor(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr)#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+g_nbr
+degree(g_nbr)
+degree.distribution(g_nbr)
+g_nbr[[1]]
+degree.distribution(g_nbr[[1]])
+j = floor(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+et.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = floor(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+g_nbr[[1]]
+g_nbr
+g <- barabasi.game(1000, directed = FALSE)
+set.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = floor(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+g_nbr
+g_nbr[1]
+g_nbr[2]
+g_nbr[0]
+g_nbr[[0]]
+g_nbr[0]
+g_nbr[0,]
+typeof(g_nbr)
+g_nbr
+g_nbr[1]
+set.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = ceiling(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+g_nbr
+g_nbr[[1]]
+g_nbr[[0]]
+set.seed(100)#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = ceiling(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+j
+i
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = ceiling(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+par(mfrow=c(5,2))#
+#
+#### a)#
+g <- barabasi.game(1000, directed = FALSE)#
+cl <- clusters(g)#
+is.connected(g)#
+#
+degreesVector <- degree(g)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+#### b)#
+fg <- fastgreedy.community(g)#
+ctm <- community.to.membership(g, fg$merges, step=which.max(fg$modularity)-1)#
+barplot(table(ctm$csize))#
+#
+modularity(fg)#
+hist(fg$modularity, breaks = 50)#
+#
+cmsize <- sizes(fg)#
+cmsize <- as.vector(sizes(fg))#
+#
+gccNodes <- (1:vcount(g))[cl$membership == gccIndex]#
+cm1Nodes <- gccNodes[fg$membership == 1]#
+#
+#### c)#
+g_large <- barabasi.game(10000, directed = FALSE)#
+cl_large <- clusters(g_large)#
+#
+degreesVector <- degree(g_large)#
+h1 <- hist(degreesVector, breaks=seq(-0.5, by=1 , length.out=max(degreesVector)+2))       #
+pl1 <- data.frame(x=h1$mids, y=h1$density)#
+plot(pl1 , type="o")#
+#
+fg_large <- fastgreedy.community(g_large)#
+ctm_large <- community.to.membership(g_large, fg_large$merges, step=which.max(fg_large$modularity)-1)#
+barplot(table(ctm_large$csize))#
+modularity(fg_large)#
+hist(fg_large$modularity, breaks = 50)#
+#
+#### d)#
+#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = ceiling(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+par(mfrow=c(2,1))#
+#
+i = floor(runif(1)*1000)#
+nbr_size <- neighborhood.size(g, 1, i)#
+nbr <- data.frame(neighborhood(g, 1, i))#
+j = ceiling(runif(1)*nbr_size)#
+if(j == 1) {#
+	j == 2#
+}#
+#
+node_num = nbr[j,]#
+g_nbr <- graph.neighborhood(g, 1, node_num) #
+degreeDist <- degree(g_nbr[[1]])#
+h2 <- hist(degreeDist, breaks=seq(-0.5, by=1 , length.out=max(degreeDist)+2))       #
+pl2 <- data.frame(x=h2$mids, y=h2$density)#
+plot(pl2, type="o")
+install.packages("/Users/raghav297/Downloads/igraph_0.6.tar.gz", repos = NULL, type="source")
+remove.packages("/Users/raghav297/Downloads/netrw_0.2.6_R_i386-apple-darwin9.8.0.tar")
+remove.packages("netrw_0.2.6_R_i386-apple-darwin9.8.0.tar")
+remove.packages("netrw_0.2.6_R_i386-apple-darwin9.8.0.tar", "/Users/raghav297/Downloads/")
+install.packages("/Library/igraph_0.6.tar.gz", repos = NULL, type="source")
+library(igraph)
+features = read.csv("features.csv")
+head(features)
+max(features$raised_amount_usd.y)
+3.2e+09
+which.max(features$raised_amount_usd.y)
+features[46369,]
+all_companies = read.csv("all_companies.csv")
+head)all_companies
+head(all_companies)
+max(all_companies$raised_amount_usd.y)
+which.max(all_companies$raised_amount_usd.y)
+all_companies[46369,]
+max(all_companies$funding_total_usd)
+all_companies$funding_total_usd = gsub(",","",all_companies$funding_total_usd)#
+all_companies$funding_total_usd = as.numeric(all_companies$funding_total_usd)
+max(all_companies$funding_total_usd)
+which.max(all_companies$funding_total_usd)
+all_comapnies[222771,]
+all_companies[222771,]
